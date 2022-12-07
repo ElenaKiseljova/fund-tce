@@ -15,36 +15,9 @@ get_header();?>
                     <img src="<?php the_field('start_img'); ?>" alt="ukraine flag"/>
                 </div>
 
-                <div class="fund">
-                    <div class="fund__top">
-                        <ul class="fund__head">
-                            <li class="text-1 fund__tab active">Разова допомога</li>
-                            <li class="text-1 fund__tab">Щомісячна допомога</li>
-                        </ul>
-                        <div class="fund__tip">
-                            <svg width="30" height="26">
-                                <use xlink:href="/wp-content/themes/fundtce/assets/img/sprite.svg#heart"></use>
-                            </svg>
-                            <p class="text-2 fund__desc">
-                                Ваші пожертвування допоможуть українцям вийти зі скрутної
-                                ситуації в житті
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fund__bottom">
-                        <div class="fund__donations">
-                            <button class="btn fund__sum">50 &#8372;</button>
-                            <button class="btn fund__sum">100 &#8372;</button>
-                            <button class="btn fund__sum">200 &#8372;</button>
-                            <button class="btn fund__sum">500 &#8372;</button>
-                            <button class="btn fund__sum">1000 &#8372;</button>
-                            <button class="btn fund__sum">інша сума</button>
-                        </div>
-                        <button class="btn btn--black fund__btn">
-                            Підтримати фонд
-                        </button>
-                    </div>
-                </div>
+                <?php 
+                  get_template_part( 'templates/fund' );
+                ?>
 
             </div>
         </div>
@@ -132,58 +105,11 @@ get_header();?>
         </div>
     </section>
 
-    <section class="founder">
-        <div class="founder__wrapper">
-            <div class="container founder__container">
-                <div class="founder__info">
-                    <h2 class="title founder__title"><?php the_field('founder_title'); ?></h2>
-                    <div class="founder__img founder__img--mobile">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/neroba.jpg" alt="Andriy Neroba"/>
-                    </div>
-                    <p class="text-1 founder__text">
-                        <?php the_field('founder_text'); ?>
-                    </p>
-                    <div class="founder__bottom">
-                        <a href="<?php the_field('founder_btn_link'); ?>" class="btn founder__btn"><?php the_field('founder_btn_text'); ?></a>
-                        <div class="founder__about">
-                            <h3 class="title-2 founder__name"><?php the_field('founder_name'); ?></h3>
-                            <p class="text-2 text--grey">
-                                <span class="founder__special"><?php the_field('founder_special'); ?></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="founder__img">
-                    <img src="<?php the_field('founder_img'); ?>" alt="Andriy Neroba"/>
-                </div>
-                <div class="founder__logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo"/>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php 
+      get_template_part( 'templates/founder' );
 
-    <section class="gallery">
-        <div class="container swiper swiperGallery">
-            <div class="gallery__head">
-                <h2 class="title"><?php the_field('gallery_title'); ?></h2>
-                <a href="<?php the_field('gallery_btn_to'); ?>" class="btn gallery__btn"><?php the_field('gallery_btn_text'); ?></a>
-            </div>
-
-            <div class="swiper-wrapper gallery__slider">
-                <?php
-                $gal = get_field('galery');
-                foreach ($gal as $item) : ?>
-                <div class="swiper-slide gallery__photo">
-                    <img src="<?php echo $item['image'] ?>" alt="gallery photo"/>
-                </div>
-                <?php endforeach; ?>
-            </div>
-            <div class="scrollbar">
-                <div class="scrollbar__drag"></div>
-            </div>
-        </div>
-    </section>
+      get_template_part( 'templates/gallery' );
+    ?>
 
     <section class="partner">
         <div class="container partner__container">

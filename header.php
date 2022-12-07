@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <?php wp_head(); ?>
-    <title>
-        <?php the_title(); ?>
-    </title>
 </head>
 
 <body>
@@ -254,7 +251,7 @@
                     </div>
                 </div>
 
-                <a href="#" class="dropdown__head"><p>Ask for help</p></a>
+                <!-- <a href="#" class="dropdown__head"><p>Ask for help</p></a> -->
                 <a href="<?php the_field('btn_link_en', 'option'); ?>"
                    class="btn header__btn"><?php the_field('btn_text_en', 'option'); ?></a>
                 <button class="burger">
