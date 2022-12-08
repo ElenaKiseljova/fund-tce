@@ -6,23 +6,32 @@ document.addEventListener('DOMContentLoaded', function (event) {
   if (burger) {
     const rootElement = document.documentElement;
 
+    const headerClickHandler = (evt) => {
+      if (
+        evt.target !== burger &&
+        !evt.target.closest('.dropdown__head--arrow')
+      ) {
+        header.classList.remove('open');
+        burger.classList.remove('open');
+        rootElement.classList.remove('block');
+
+        header.removeEventListener('click', headerClickHandler);
+      }
+    };
+
     burger.addEventListener('click', function () {
-      header.classList.toggle('open');
-      burger.classList.toggle('open');
-      rootElement.classList.toggle('block');
+      if (burger.classList.contains('open')) {
+        header.classList.remove('open');
+        burger.classList.remove('open');
+        rootElement.classList.remove('block');
 
-      let headerOpen = document.querySelector('.header.open');
+        header.removeEventListener('click', headerClickHandler);
+      } else {
+        header.classList.add('open');
+        burger.classList.add('open');
+        rootElement.classList.add('block');
 
-      if (headerOpen) {
-        let navItem = headerOpen.querySelectorAll('.header.open .nav__item');
-
-        navItem.forEach((item) => {
-          item.addEventListener('click', function () {
-            header.classList.remove('open');
-            burger.classList.remove('open');
-            rootElement.classList.remove('block');
-          });
-        });
+        header.addEventListener('click', headerClickHandler);
       }
     });
   }

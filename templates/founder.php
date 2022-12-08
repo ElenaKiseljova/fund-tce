@@ -1,4 +1,4 @@
-<section class="founder">
+<section class="founder" id="founder">
     <div class="founder__wrapper <?= is_front_page(  ) ? '' : 'founder__wrapper--inner'?>">
         <div class="container founder__container">
             <div class="founder__info">

@@ -1,4 +1,4 @@
-<div class="fund">
+<div class="fund" id="fund">
   <div class="fund__top">
       <ul class="fund__head">
           <li class="text-1 fund__tab active">Разова допомога</li>

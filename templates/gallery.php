@@ -3,7 +3,7 @@
   $gal_btn_text = get_field( 'gal_btn_text' );
 ?>
 
-<section class="gallery">
+<section class="gallery" id="gallery">
   <div class="container swiper swiperGallery">
     <?php if ( $gal_title || $gal_btn_text ) : ?>
       <div class="gallery__head">
