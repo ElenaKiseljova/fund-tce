@@ -105,33 +105,9 @@ get_header();?>
   
   <?php 
     get_template_part( 'templates/gallery' );
+
+    get_template_part( 'templates/partner' );
   ?>
-
-  <section class="partner">
-      <div class="container partner__container">
-          <div class="partner__head">
-              <h2 class="title"><?php the_field('ptn_title'); ?></h2>
-              <a href="<?php the_field('ptn_btn_to'); ?>" class="btn partner__btn"><?php the_field('ptn_btn_text'); ?></a>
-          </div>
-          <div class="partner__grid">
-              <?php
-              $ptns = get_field('ptn_imgs');
-              foreach ($ptns as $item) : ?>
-
-                  <div class="partner__img">
-                      <img src="<?php echo $item['image'] ?>" alt="partner" />
-                  </div>
-              <?php endforeach; ?>
-
-          </div>
-          <a href="<?php the_field('ptn_btn_to'); ?>" class="btn partner__btn partner__btn--mobile"
-          ><?php the_field('ptn_btn_text'); ?></a
-          >
-          <div class="partner__logo">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo" />
-          </div>
-      </div>
-  </section>
 </main>
 
 <?php get_footer();?>

@@ -1,6 +1,5 @@
 <?php
 /* fundtce */
-// define('MY_THEME_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/fundtce');
 
 // Styles theme
 add_action('wp_enqueue_scripts', 'fundtce_styles', 3);

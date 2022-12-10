@@ -3,7 +3,7 @@
   $baner_subtitle = get_field('baner_subtitle');
 ?>
 
-<section class="promo">
+<section class="promo" id="promo">
   <div class="promo__wrapper">
       <div class="container promo__container">
           <h1>

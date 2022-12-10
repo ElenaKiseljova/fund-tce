@@ -1,4 +1,5 @@
 <?php 
+  $gal = get_field('gal_imgs');
   $gal_title = get_field( 'gal_title' );
   $gal_btn_text = get_field( 'gal_btn_text' );
 ?>
@@ -15,16 +16,14 @@
 
     <div class="swiper-wrapper gallery__slider">
       <?php
-        $gal = get_field('gal_imgs');
-
         if ( $gal && is_array($gal) && !is_wp_error($gal) ) {
-            foreach ($gal as $item) {
-            ?>
-              <div class="swiper-slide gallery__photo">
-                <img src="<?php echo $item['image'] ?>" alt="gallery photo" />
-              </div>
-            <?php
-            }
+          foreach ($gal as $item) {
+          ?>
+            <div class="swiper-slide gallery__photo">
+              <img src="<?php echo $item['image'] ?>" alt="gallery photo" />
+            </div>
+          <?php
+          }
         }
       ?>
     </div>

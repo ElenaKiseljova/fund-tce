@@ -60,16 +60,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   // Табы
   // Стартовая секция
-  const tabFundItem = document.querySelectorAll('.fund__tab');
+  // const tabFundItem = document.querySelectorAll('.fund__tab');
 
-  if (tabFundItem) {
-    tabFundItem.forEach((item) => {
-      item.addEventListener('click', () => {
-        tabFundItem.forEach((el) => el.classList.remove('active'));
-        item.classList.add('active');
-      });
-    });
-  }
+  // if (tabFundItem) {
+  //   tabFundItem.forEach((item) => {
+  //     item.addEventListener('click', () => {
+  //       tabFundItem.forEach((el) => el.classList.remove('active'));
+  //       item.classList.add('active');
+  //     });
+  //   });
+  // }
 
   // Секция "Сфери діяльності фонду"
   const tabScopeItem = document.querySelectorAll('.scope__item');

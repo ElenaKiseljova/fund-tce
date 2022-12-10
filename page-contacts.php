@@ -17,7 +17,7 @@
 <script>
   window.mapMarker = {
     icon: {
-      url: '<?= $map['marker'] ? $map['marker'] : '/wp-content/themes/fundtce/assets/img/marker.svg'; ?>',
+      url: '<?= $map['marker'] ? $map['marker'] : get_template_directory_uri(  ) . '/assets/img/marker.svg'; ?>',
     },
     title: '<?= $map['title'] !== '' ? $map['title'] : get_bloginfo( 'name' ); ?>',
     position: { 
@@ -65,14 +65,14 @@
     <div class="map__container" id="map"></div>
   </section>
 
-  <section class="help">
-    <div class="help__container container">
-      <h2 class="help__title title"><?= $help_title; ?></h2>
+  <section class="need-help">
+    <div class="need-help__container container">
+      <h2 class="need-help__title title"><?= $help_title; ?></h2>
       
-      <div class="helt__columns">
+      <div class="need-help__columns">
         <?php if ( $help_columns && is_array($help_columns) && !is_wp_error( $help_columns ) ) : ?>
           <?php foreach ($help_columns as $key => $column) : ?>
-            <p class="help__text text">
+            <p class="need-help__text text">
               <?= $column['text'] ?? '';?>           
             </p>
           <?php endforeach; ?>
@@ -82,12 +82,12 @@
           <?php 
             $button = $help_last_column['button'] ?? [];
           ?>
-          <div class="help__contact">
-            <p class="help__text help__text--gray text">
+          <div class="need-help__contact">
+            <p class="need-help__text need-help__text--gray text">
               <?= $help_last_column['text']; ?>
             </p>
             
-            <a class="help__button btn btn--black" href="<?= $button['url']; ?>">
+            <a class="need-help__button btn btn--black" href="<?= $button['url']; ?>">
               <span><?= $button['text']; ?></span>
             </a>
           </div>
@@ -95,6 +95,16 @@
       </div>      
     </div>
   </section>
+  
+  <section class="want-help">
+    <div class="want-help__container container">
+      <h2 class="want-help__title title"><?= __('Бажаєте допомогти?', 'foundtce'); ?></h2>
+      
+      <?php 
+        get_template_part( 'templates/fund' );
+      ?>     
+    </div>
+  </section>  
 </main>
 
 <?php get_footer();?>

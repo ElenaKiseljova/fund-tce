@@ -160,6 +160,8 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+
+  cursor: pointer;
 }
 
 .btn--black {
@@ -168,7 +170,8 @@ body {
   border: none;
 }
 
-.btn:hover {
+.btn:hover,
+input[type='radio']:checked + .btn {
   color: var(--white);
   background-color: var(--green);
   -webkit-transition: 0.2s ease;
@@ -356,12 +359,20 @@ body {
   -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+
+.start__fund,
+.promo__fund {
   position: absolute;
   bottom: -115px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+.fund__form {
+  width: 100%;
 }
 
 .fund__top {
@@ -396,7 +407,8 @@ body {
   cursor: pointer;
 }
 
-.fund__tab.active {
+.fund__tab.active,
+input[type='radio']:checked + .fund__tab {
   color: var(--black);
   border-bottom: 1px solid var(--black);
 }
@@ -1556,7 +1568,8 @@ body {
 }
 
 @media (max-width: 1399px) {
-  .fund {
+  .start__fund,
+  .promo__fund {
     bottom: -290px;
   }
 
@@ -1833,6 +1846,10 @@ body {
   .fund {
     padding: 30px 20px;
     border-radius: 15px;
+  }
+
+  .start__fund,
+  .promo__fund {
     bottom: -325px;
   }
 
