@@ -4,7 +4,7 @@
             <div class="founder__info">
                 <h2 class="title founder__title"><?php the_field('founder_title'); ?></h2>
                 <div class="founder__img founder__img--mobile">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/neroba.jpg" alt="Andriy Neroba"/>
+                    <img src="<?= get_template_directory_uri(); ?>/assets/img/neroba.jpg" alt="Andriy Neroba"/>
                 </div>
                 <p class="text-1 founder__text">
                     <?php the_field('founder_text'); ?>
@@ -27,7 +27,7 @@
             </div>
             
             <div class="founder__logo <?= is_front_page(  ) ? '' : 'founder__logo--inner'; ?>">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo"/>
+              <img src="<?= get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo"/>
             </div>         
         </div>
     </div>

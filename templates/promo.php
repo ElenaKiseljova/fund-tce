@@ -21,16 +21,6 @@
         <div class="promo__img">
           <img src="<?php the_field('baner_img'); ?>" alt="banner" />
         </div>
-      <?php endif; ?>        
-      
-      <?php 
-        if ( 
-          !is_page_template( 'page-team.php' ) && 
-          !is_page_template( 'page-contacts.php' ) && 
-          !is_page_template( 'page-appeal.php' ) 
-        ) {
-          get_template_part( 'templates/fund' );
-        }          
-      ?>
+      <?php endif; ?>  
   </div>
 </section>

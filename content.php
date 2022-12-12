@@ -7,6 +7,8 @@ get_header();?>
 <main class="main">
   <?php 
     get_template_part( 'templates/promo' );
+
+    get_template_part( 'templates/fund' );
   ?>
 
   <section class="content">

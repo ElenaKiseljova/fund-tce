@@ -4,7 +4,11 @@
 // Styles theme
 add_action('wp_enqueue_scripts', 'fundtce_styles', 3);
 function fundtce_styles () {    
-  wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css');
+  if ( is_page_template( 'page-appeal.php' ) ) {
+    wp_enqueue_style('custom-select', get_template_directory_uri() . '/assets/css/libs/custom-select.css');
+  }
+
+  wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/css/libs/swiper-bundle.min.css');
 
   wp_enqueue_style('fundtce-style', get_stylesheet_uri());
 }
@@ -12,17 +16,21 @@ function fundtce_styles () {
 // Scripts theme
 add_action('wp_enqueue_scripts', 'fundtce_scripts', 5);
 function fundtce_scripts () {    
-  wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', $deps = array(), $ver = null, $in_footer = true );
+  wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/libs/swiper-bundle.min.js', $deps = array(), $ver = null, $in_footer = true );
   
-  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $deps = array(), $ver = null, $in_footer = true);
-
-  if ( is_page_template( 'page-contacts.php' )) {
+  if ( is_page_template( 'page-contacts.php' ) ) {
       $map = get_field( 'map' ) ?? [];
       $key = $map['key'] ?? '';
 
       wp_enqueue_script('map-script', get_template_directory_uri() . '/assets/js/map.js', $deps = array(), $ver = null, $in_footer = true );
       wp_enqueue_script('g-maps-script', 'https://maps.googleapis.com/maps/api/js?key=' . $key . '&callback=initMap', $deps = array(), $ver = null, $in_footer = true );
   }
+
+  if ( is_page_template( 'page-appeal.php' ) ) {
+    wp_enqueue_script('custom-select', get_template_directory_uri() . '/assets/js/libs/custom-select.min.js', $deps = array(), $ver = null, $in_footer = true );
+  }
+
+  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $deps = array(), $ver = null, $in_footer = true);
 }
 
 // After setup

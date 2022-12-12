@@ -34,3 +34,14 @@ input[type='radio'].visually-hidden {
   clip-path: inset(100%);
 }
 
+.pt-0 {
+  padding-top: 0;
+}
+
+.wpcf7-not-valid-tip {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 0;
+}
+

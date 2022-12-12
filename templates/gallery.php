@@ -4,7 +4,7 @@
   $gal_btn_text = get_field( 'gal_btn_text' );
 ?>
 
-<section class="gallery" id="gallery">
+<section class="gallery <?= !$gal_title && !$gal_btn_text ? 'pt-0' : ''; ?>" id="gallery">
   <div class="container swiper swiperGallery">
     <?php if ( $gal_title || $gal_btn_text ) : ?>
       <div class="gallery__head">
