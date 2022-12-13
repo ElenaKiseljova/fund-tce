@@ -1,7 +1,7 @@
 <section class="fund <?= is_page_template( 'page-contacts.php' ) ? 'fund--contacts' : ''; ?>" id="fund">
 
   <div class="fund__container container <?= is_page_template( 'page-contacts.php' ) ? 'logo-bg' : ''; ?>">
-    <h2 class="fund__title title <?= !is_page_template( 'page-contacts.php' ) ? 'visually-hidden' : ''; ?>"><?= __('Бажаєте допомогти?', 'foundtce'); ?></h2>
+    <h2 class="fund__title title <?= !is_page_template( 'page-contacts.php' ) ? 'visually-hidden' : ''; ?>"><?= __('Бажаєте допомогти?', 'fundtce'); ?></h2>
 
     <form action="" class="fund__form  <?= is_front_page(  ) 
                         ? 'fund__form--front' 
@@ -12,17 +12,17 @@
       <div class="fund__top">
           <div class="fund__head">
             <input class="visually-hidden" type="radio" name="help" id="help-1" value="single" checked>
-            <label class="text-1 fund__tab" for="help-1"><?= __('Разова допомога', 'foundtce'); ?></label>
+            <label class="text-1 fund__tab" for="help-1"><?= __('Разова допомога', 'fundtce'); ?></label>
             
             <input class="visually-hidden" type="radio" name="help" id="help-2" value="multiple">
-            <label class="text-1 fund__tab" for="help-2"><?= __('Щомісячна допомога', 'foundtce'); ?></label>
+            <label class="text-1 fund__tab" for="help-2"><?= __('Щомісячна допомога', 'fundtce'); ?></label>
           </div>
           <div class="fund__tip">
               <svg width="30" height="26">
                   <use xlink:href="<?= get_template_directory_uri(  ); ?>/assets/img/sprite.svg#heart"></use>
               </svg>
               <p class="text-2 fund__desc">
-                  <?= __('Ваші пожертвування допоможуть українцям вийти зі скрутної ситуації в житті', 'foundtce'); ?>
+                  <?= __('Ваші пожертвування допоможуть українцям вийти зі скрутної ситуації в житті', 'fundtce'); ?>
               </p>
           </div>
       </div>
@@ -44,11 +44,11 @@
           <label for="amount-5" class="btn fund__sum">1000 &#8372;</label>
           
           <input class="visually-hidden" type="radio" name="amount" id="amount-6" value="another">
-          <label for="amount-6" class="btn fund__sum"><?= __('інша сума', 'foundtce'); ?></label>
+          <label for="amount-6" class="btn fund__sum"><?= __('інша сума', 'fundtce'); ?></label>
         </div>
 
         <button class="btn btn--black fund__btn">
-            <?= __('Підтримати фонд', 'foundtce'); ?>
+            <?= __('Підтримати фонд', 'fundtce'); ?>
         </button>
       </div>
     </form>  
