@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fund TCE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-21 17:09+0000\n"
+"POT-Creation-Date: 2022-12-13 08:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -45,10 +45,6 @@ msgid "Other Page"
 msgstr ""
 
 #. Name of the template
-msgid "Requisites Page"
-msgstr ""
-
-#. Name of the template
 msgid "Team Page"
 msgstr ""
 
@@ -60,34 +56,31 @@ msgstr ""
 msgid "Webnauts"
 msgstr ""
 
-#: templates/fund.php:19
-msgid "Інші варіанти оплати"
+#: templates/fund.php:4
+msgid "Бажаєте допомогти?"
 msgstr ""
 
-#: templates/fund.php:7
-msgid "Бажаєте допомогти?"
+#: templates/fund.php:25
+msgid ""
+"Ваші пожертвування допоможуть українцям вийти зі скрутної ситуації в житті"
 msgstr ""
 
 #: header.php:38
 msgid "Головна"
 msgstr ""
 
-#: templates/requisites/requisites.php:9
-msgid "Не скопійовано в буфер обміну. Потрібен протокол HTTPS"
-msgstr ""
-
-#: footer.php:11 header.php:28 header.php:49 templates/fund.php:44
+#: footer.php:11 header.php:28 header.php:49 templates/fund.php:51
 msgid "Підтримати фонд"
 msgstr ""
 
-#: templates/fund.php:16
-msgid "Разова допомога через LiqPay"
+#: templates/fund.php:15
+msgid "Разова допомога"
 msgstr ""
 
-#: templates/requisites/requisites.php:8
-msgid "Скопійовано в буфер обміну"
+#: templates/fund.php:18
+msgid "Щомісячна допомога"
 msgstr ""
 
-#: templates/fund.php:40
+#: templates/fund.php:47
 msgid "інша сума"
 msgstr ""

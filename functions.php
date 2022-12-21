@@ -30,6 +30,10 @@ function fundtce_scripts () {
     wp_enqueue_script('custom-select', get_template_directory_uri() . '/assets/js/libs/custom-select.min.js', $deps = array(), $ver = null, $in_footer = true );
   }
 
+  if ( is_page_template( 'page-requisites.php' ) ) {
+    wp_enqueue_script('message', get_template_directory_uri() . '/assets/js/message.js', $deps = array(), $ver = null, $in_footer = true );
+  }
+
   wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $deps = array(), $ver = null, $in_footer = true);
 }
 
@@ -52,22 +56,22 @@ if (!function_exists('fundtce_after_setup_theme_function')) :
 }
 endif;
 
-// add_action('acf/init', 'fundtce_acf_op_init');
-// function fundtce_acf_op_init() {
+add_action('acf/init', 'fundtce_acf_op_init');
+function fundtce_acf_op_init() {
 
-//     // Check function exists.
-//     if( function_exists('acf_add_options_page') ) {
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
 
-//         // Register options page.
-//         $option_page = acf_add_options_page(array(
-//             'page_title'    => __('Theme Menu Settings'),
-//             'menu_title'    => __('Menu Settings'),
-//             'menu_slug'     => 'theme-general-settings',
-//             'capability'    => 'edit_posts',
-//             'redirect'      => false
-//         ));
-//     }
-// }
+        // Register options page.
+        $option_page = acf_add_options_page(array(
+            'page_title'    => __('Налаштування теми FundTCE'),
+            'menu_title'    => __('Налаштування теми FundTCE'),
+            'menu_slug'     => 'theme-general-settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
+    }
+}
 
 /**
  * $mode : 'desktop', 'mobile'
@@ -93,4 +97,33 @@ function fundtce_draw_menu($name = '', $mode = 'desktop')
     get_template_part( 'templates/nav' );
   }  
 }
+
+/* ==============================================
+  ********  //Получение ссылок на спецстраницы
+  =============================================== */
+  /**
+   * $type: requisites
+   */
+  function fundtce_get_special_page( $type = 'requisites', $format = 'url' )
+  {
+    $page_name = $type . '_page_id';
+
+    $page_id = get_field( $page_name, 'options' ) ?? null;
+    
+    if ( function_exists( 'pll_get_post' ) ) {
+      $page_id = pll_get_post( $page_id ) ?? $page_id;
+    }
+
+    if ( $format === 'id') {
+      return $page_id;
+    }
+
+    if ( $format === 'url') {
+      $page_url = get_permalink( $page_id );
+    
+      return $page_url;
+    }
+  
+    return;
+  }
 ?>
