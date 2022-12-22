@@ -9,7 +9,7 @@
     error: '<?= __( 'Не скопійовано в буфер обміну. Потрібен протокол HTTPS', 'fundtce' ); ?>',
   };
 </script>
-<section class="requisites">
+<section class="requisites" id="requisites">
   <div class="requisites__container container">
     <h2 class="requisites__title title"><?= $requisites_title; ?></h2>
 

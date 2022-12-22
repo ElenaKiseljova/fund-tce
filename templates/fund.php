@@ -1,5 +1,5 @@
 <?php 
-  $requisites_page_url = function_exists( 'fundtce_get_special_page' ) ? fundtce_get_special_page( 'requisites', 'url' ) : '#';
+  $requisites_page_url = function_exists( 'fundtce_get_special_page' ) && !is_page( fundtce_get_special_page( 'requisites', 'id' ) ) ? fundtce_get_special_page( 'requisites', 'url' ) . '#requisites' : '#requisites';
 ?>
 <section class="fund <?= is_page_template( 'page-contacts.php' ) ? 'fund--contacts' : ''; ?>" id="fund">
 
