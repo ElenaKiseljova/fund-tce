@@ -64,7 +64,6 @@ const copyToClipboard = (content) => {
       window.MESSAGES_COPY_TO_CLIPBOARD?.success || 'Copied to clipboard'
     );
   } else {
-    console.log(content);
     createMessageElement(
       window.MESSAGES_COPY_TO_CLIPBOARD?.error ||
         'The connection is not secure. Requires HTTPS protocol',
@@ -77,16 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init message
   initMessage();
 
-  const copyLinks = document.querySelectorAll(
-    '.requisites__column a[href="#"]'
+  const copyEls = document.querySelectorAll(
+    '.requisites__column a[href="#"], .copy'
   );
 
-  if (copyLinks.length > 0) {
-    copyLinks.forEach((copyLink) => {
-      copyLink.addEventListener('click', (evt) => {
+  if (copyEls.length > 0) {
+    copyEls.forEach((copyEl) => {
+      copyEl.addEventListener('click', (evt) => {
         evt.preventDefault();
 
-        copyToClipboard(copyLink.textContent);
+        const childText = copyEl.querySelector('.copy__text');
+        const text = childText ? childText.textContent : copyEl.textContent;
+
+        copyToClipboard(text);
       });
     });
   }

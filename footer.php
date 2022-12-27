@@ -1,3 +1,11 @@
+<?php 
+  $requisites_page_url = (is_page_template( 'page-team.php' ) || is_page_template( 'page-appeal.php' )) && 
+                         function_exists( 'fundtce_get_special_page' ) && 
+                         !is_page( fundtce_get_special_page( 'requisites', 'id' ) ) ? 
+                            fundtce_get_special_page( 'requisites', 'url' ) . '#fund' : 
+                            '#fund';
+?>
+
 <footer class="footer">
   <div class="footer__wrapper">
     <div class="container">
@@ -7,7 +15,7 @@
             get_template_part( 'templates/logo' );
           ?>
 
-          <a href="<?= get_bloginfo( 'url' ); ?>#fund"
+          <a href="<?= $requisites_page_url; ?>"
             class="btn btn--black footer__btn"><?= __( 'Підтримати фонд', 'fundtce' ); ?></a>
         </div>
         <div class="footer__block">

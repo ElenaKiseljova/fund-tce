@@ -30,18 +30,52 @@
           <li class="requisites__item" id="requisite-<?= $key; ?>">
             <?php 
               $requisite_title = $requisite['title'] ?? '';
+              $requisite_type_select = $requisite['type_select'] ?? 'table';
               $requisite_columns = $requisite['columns'] ?? [];
+              $groups = $requisite['groups'] ?? [];
             ?>
 
             <h3 class="requisites__subtitle title-2"><?= $requisite_title; ?></h3>
 
-            <?php if ( $requisite_columns && is_array($requisite_columns) && !is_wp_error( $requisite_columns ) ) : ?>
-              <ul class="requisites__columns requisites__columns--<?= count($requisite_columns); ?>">
-                <?php foreach ($requisite_columns as $key => $requisite_column) : ?>
-                  <li class="requisites__column text-1">
-                    <?= $requisite_column['content'] ?? ''; ?>
-                  </li>
-                <?php endforeach; ?>
+            <?php if ( $requisite_type_select === 'table' && $groups && is_array($groups) && !is_wp_error( $groups ) ) : ?>
+              <ul class="requisites__groups">
+                <?php foreach ($groups as $key => $groups_item) : ?>  
+                  <?php 
+                    $group = $groups_item['group'] ?? [];  
+                    $group_title = $group['title'] ?? '';  
+                    $group_rows = $group['row'] ?? []; 
+                    $group_copy_all = $group['copy_all'] ?? '';  
+                  ?> 
+                  <li class="requisites__group">
+                    <?php if ( $group_title !== '') : ?>
+                      <h4 class="requisites__group-title"><?= $group_title; ?></h4>
+                    <?php endif; ?>                    
+
+                    <?php foreach ($group_rows as $key => $group_row) : ?>  
+                      <div class="requisites__group-row">
+                        <h5 class="requisites__group-subtitle text-1"><?= $group_row['title'] ?? ''; ?></h5>
+                        <p class="requisites__group-text text-1 copy"><span class="copy__text"><?= $group_row['value'] ?? ''; ?></span></p>
+                      </div>
+                    <?php endforeach; ?> 
+
+                    <p class="requisites__group-copy-all text-1 text--grey copy">
+                      <span><?= __( 'Скопіювати повністю реквізити', 'fundtce' ); ?></span>
+
+                      <span class="copy__text visually-hidden"><?= $group_copy_all; ?></span>
+                    </p>
+                  </li> 
+                <?php endforeach; ?>                
+              </ul>
+            <?php endif; ?>
+
+            <?php if ( $requisite_type_select === 'columns' && $requisite_columns && is_array($requisite_columns) && !is_wp_error( $requisite_columns ) ) : ?>
+              <ul class="requisites__columns">
+                <li class="requisites__column text-2">
+                  <?= $requisite_columns['column_left'] ?? ''; ?>
+                </li>
+                <li class="requisites__column text-2">
+                  <?= $requisite_columns['column_right'] ?? ''; ?>
+                </li>
               </ul>
             <?php endif; ?>
           </li>
