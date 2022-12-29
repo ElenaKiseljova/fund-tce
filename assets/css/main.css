@@ -1086,8 +1086,15 @@ input[type='radio']:checked + .btn {
   margin-top: auto;
 }
 
+.founder__bottom--end {
+  justify-content: flex-end;
+}
+
 .founder__btn {
   width: 224px;
+
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .founder__about {
@@ -1744,7 +1751,7 @@ input[type='radio']:checked + .btn {
 .contacts {
   width: 100%;
 
-  padding: 180px 0 100px;
+  padding: 100px 0 180px;
 }
 
 .contacts__list {
@@ -2184,6 +2191,61 @@ input[type='radio']:checked + .btn {
 
 .form__submit {
   min-width: 250px;
+}
+
+.page {
+  width: 100%;
+
+  padding: 60px 0 180px;
+}
+
+.page__content * + * {
+  margin-top: 20px;
+}
+
+.page__content a {
+  color: var(--green);
+}
+
+.page__content .wp-block-columns.is-layout-flex {
+  gap: 30px;
+
+  margin-bottom: 0;
+}
+
+.page__content .wp-block-columns + .wp-block-columns {
+  margin-top: 30px;
+}
+
+.page__content .wp-block-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.page__content .wp-block-image {
+  flex-grow: 1;
+
+  margin-bottom: 0;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.page__content .wp-block-image img {
+  width: 100%;
+  height: 100%;
+
+  object-position: center;
+  object-fit: cover;
+}
+
+.page__content .wp-block-image + .wp-block-image {
+  margin-top: 30px;
 }
 
 @media (max-width: 1399px) {
@@ -3287,6 +3349,10 @@ input[type='radio']:checked + .btn {
     padding-left: 0;
 
     border: none;
+  }
+
+  .page {
+    padding: 30px 0 100px;
   }
 }
 

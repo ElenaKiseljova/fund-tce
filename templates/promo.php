@@ -1,5 +1,6 @@
 <?php 
   $baner_img = get_field('baner_img');
+  $baner_title = get_field('baner_title');
   $baner_subtitle = get_field('baner_subtitle');
 ?>
 
@@ -7,7 +8,7 @@
   <div class="promo__wrapper">
       <div class="container promo__container">
           <h1>
-              <?php the_field('baner_title') ?>
+              <?= $baner_title && $baner_title !== '' ? $baner_title : get_the_title(  ); ?>
           </h1>
 
           <?php if ( $baner_subtitle ) : ?>

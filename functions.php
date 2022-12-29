@@ -10,6 +10,10 @@ function fundtce_styles () {
 
   wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/css/libs/swiper-bundle.min.css');
 
+  if ( is_front_page(  ) ) {
+    wp_enqueue_style('fancybox', get_template_directory_uri() . '/assets/css/libs/fancybox.css');
+  }
+
   wp_enqueue_style('fundtce-style', get_stylesheet_uri());
 }
 
@@ -32,6 +36,10 @@ function fundtce_scripts () {
 
   if ( is_page_template( 'page-requisites.php' ) ) {
     wp_enqueue_script('message', get_template_directory_uri() . '/assets/js/message.js', $deps = array(), $ver = null, $in_footer = true );
+  }
+
+  if ( is_front_page(  ) ) {
+    wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/js/libs/fancybox.umd.js', $deps = array(), $ver = null, $in_footer = true );
   }
 
   wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $deps = array(), $ver = null, $in_footer = true);

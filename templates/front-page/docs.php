@@ -1,22 +1,31 @@
 <?php 
-  $docs = get_field('documents');
+  $docs = get_field( 'documents' );
+  $documents_btn_to = get_field( 'documents_btn_to' );
 ?>
 
 <section class="docs" id="docs">
   <div class="container docs__container swiper swiperDocs">
       <div class="docs__head">
           <h2 class="title"><?php the_field('documents_title'); ?></h2>
-          <a href="<?php the_field('documents_btn_to'); ?>" class="btn docs__btn">
+
+          <?php if ( $documents_btn_to && $documents_btn_to !== '' ) : ?>
+            <a href="<?= $documents_btn_to; ?>" class="btn docs__btn">
               <?php the_field('documents_btn_text'); ?>
-          </a>
+            </a>
+          <?php endif; ?>          
       </div>
       <div class="swiper-wrapper docs__grid">
           
 
           <?php if ( $docs && is_array($docs) && !is_wp_error( $docs ) ) : ?>
             <?php foreach ($docs as $item) : ?>
+              <?php 
+                $fancybox_src = $item['file'] ? $item['file'] :  $item['image'];
+              ?>
               <div class="swiper-slide docs__img">
-                  <img src="<?php echo $item['image'] ?>" alt="document"/>
+                <a data-fancybox data-src="<?= $fancybox_src; ?>" href="#">
+                  <img src="<?= $item['image']; ?>" alt="document"/>
+                </a>
               </div>
             <?php endforeach; ?>
           <?php endif; ?>          
@@ -24,8 +33,11 @@
       <div class="scrollbar">
           <div class="scrollbar__drag"></div>
       </div>
-      <a href="<?php the_field('documents_btn_to'); ?>" class="btn docs__btn docs__btn--mobile">
+
+      <?php if ( $documents_btn_to && $documents_btn_to !== '' ) : ?>
+        <a href="<?= $documents_btn_to; ?>" class="btn docs__btn docs__btn--mobile">
           <?php the_field('documents_btn_text'); ?>
-      </a>
+        </a>
+      <?php endif; ?>      
   </div>
 </section>

@@ -1,15 +1,18 @@
 <?php 
   $gal = get_field('gal_imgs');
   $gal_title = get_field( 'gal_title' );
-  $gal_btn_text = get_field( 'gal_btn_text' );
+  $gal_btn_to = get_field( 'gal_btn_to' );
 ?>
 
-<section class="gallery <?= !$gal_title && !$gal_btn_text ? 'pt-0' : ''; ?>" id="gallery">
+<section class="gallery <?= (!$gal_btn_to || $gal_btn_to === '') && (!$gal_title || $gal_title === '')  ? 'pt-0' : ''; ?>" id="gallery">
   <div class="container swiper swiperGallery">
-    <?php if ( $gal_title || $gal_btn_text ) : ?>
+    <?php if ( ($gal_title && $gal_title !== '') || ($gal_btn_to && $gal_btn_to !== '') ) : ?>
       <div class="gallery__head">
           <h2 class="title"><?php the_field('gal_title'); ?></h2>
-          <a href="<?php the_field('gal_btn_to'); ?>" class="btn gallery__btn"><?php the_field('gal_btn_text'); ?></a>
+
+          <?php if ($gal_btn_to && $gal_btn_to !== '') : ?>
+            <a href="<?= $gal_btn_to; ?>" class="btn gallery__btn"><?php the_field('gal_btn_text'); ?></a>
+          <?php endif; ?>          
       </div>
     <?php endif; ?>
       

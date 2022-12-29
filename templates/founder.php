@@ -1,3 +1,6 @@
+<?php 
+  $founder_btn_link = get_field( 'founder_btn_link' );
+?>
 <section class="founder" id="founder">
     <div class="founder__wrapper <?= is_front_page(  ) ? '' : 'founder__wrapper--inner'?>">
         <div class="container founder__container">
@@ -9,9 +12,9 @@
                 <p class="text-1 founder__text">
                     <?php the_field('founder_text'); ?>
                 </p>
-                <div class="founder__bottom">
-                  <?php if ( is_front_page(  ) ) : ?>
-                    <a href="<?php the_field('founder_btn_link'); ?>" class="btn founder__btn"><?php the_field('founder_btn_text'); ?></a>
+                <div class="founder__bottom <?= is_front_page(  ) ? 'founder__bottom--end' : ''; ?>">
+                  <?php if ( is_front_page(  ) && $founder_btn_link && $founder_btn_link !== '' ) : ?>
+                    <a href="<?= $founder_btn_link; ?>" class="btn founder__btn"><?php the_field('founder_btn_text'); ?></a>
                   <?php endif; ?>
                     
                   <div class="founder__about <?= is_front_page(  ) ? '' : 'founder__about--inner'; ?>">
