@@ -20,7 +20,7 @@ get_header();?>
 
       get_template_part( 'templates/partner' );
 
-      get_template_part( 'templates/front-page/docs' );
+      get_template_part( 'templates/docs' );
     ?>
 </main>
 

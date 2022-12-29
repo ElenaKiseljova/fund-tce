@@ -3,7 +3,7 @@
   $documents_btn_to = get_field( 'documents_btn_to' );
 ?>
 
-<section class="docs" id="docs">
+<section class="docs <?= is_front_page(  ) ? '' : 'docs--inner'; ?>" id="docs">
   <div class="container docs__container swiper swiperDocs">
       <div class="docs__head">
           <h2 class="title"><?php the_field('documents_title'); ?></h2>
@@ -15,8 +15,6 @@
           <?php endif; ?>          
       </div>
       <div class="swiper-wrapper docs__grid">
-          
-
           <?php if ( $docs && is_array($docs) && !is_wp_error( $docs ) ) : ?>
             <?php foreach ($docs as $item) : ?>
               <?php 
