@@ -35,7 +35,15 @@
       </div>
 
       <div class="footer__bottom">
-        <p>© БО “Час чистого довкілля”</p>
+        <p>
+          <?php 
+            $found_name = sprintf('%s “%s”',
+                __( 'БО', 'fundtce' ),
+                __( 'Час чистого довкілля', 'fundtce' ),
+              );
+          ?>
+          © <?= $found_name; ?>
+        </p>
         <p><?= date('Y'); ?></p>
       </div>
     </div>

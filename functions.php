@@ -25,9 +25,10 @@ function fundtce_scripts () {
   if ( is_page_template( 'page-contacts.php' ) ) {
       $map = get_field( 'map' ) ?? [];
       $key = $map['key'] ?? '';
+      $lang = function_exists( 'pll_current_language' ) ? pll_current_language() : 'uk';
 
       wp_enqueue_script('map-script', get_template_directory_uri() . '/assets/js/map.js', $deps = array(), $ver = null, $in_footer = true );
-      wp_enqueue_script('g-maps-script', 'https://maps.googleapis.com/maps/api/js?key=' . $key . '&callback=initMap', $deps = array(), $ver = null, $in_footer = true );
+      wp_enqueue_script('g-maps-script', 'https://maps.googleapis.com/maps/api/js?key=' . $key . '&region=' . $lang . '&language=' . $lang . '&callback=initMap', $deps = array(), $ver = null, $in_footer = true );
   }
 
   if ( is_page_template( 'page-appeal.php' ) ) {

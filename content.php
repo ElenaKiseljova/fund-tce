@@ -27,7 +27,7 @@ get_header();?>
                   <div class="card__body">
                       <div class="card__text">
                           <h3><?php echo $post1['title']?></h3>
-                          <?php echo $post1['description']?>
+                          <p><?php echo $post1['description']?></p>
                       </div>
                       <div class="card__box">
                           <p class="text-2 card__details"><?php the_field('post_btn_text') ?></p>

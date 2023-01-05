@@ -2075,6 +2075,22 @@ input[type='radio']:checked + .btn {
   counter-reset: row-count;
 }
 
+.form .wpcf7-not-valid-tip {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 0;
+}
+
+.form .wpcf7 form .wpcf7-response-output {
+  margin-right: 0;
+  margin-left: 0;
+
+  padding: 9px 20px;
+
+  border: 1px solid var(--red, red) !important;
+}
+
 .form__row {
   display: flex;
 

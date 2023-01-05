@@ -39,13 +39,6 @@ input[type='radio'].visually-hidden {
   padding-top: 0;
 }
 
-.wpcf7-not-valid-tip {
-  position: absolute;
-
-  top: calc(100% + 10px);
-  left: 0;
-}
-
 .grecaptcha-badge {
   display: none;
 }

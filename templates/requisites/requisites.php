@@ -59,7 +59,7 @@
                     <?php endforeach; ?> 
 
                     <p class="requisites__group-copy-all text-1 text--grey copy">
-                      <span><?= __( 'Скопіювати повністю реквізити', 'fundtce' ); ?></span>
+                      <span><?= __( 'Скопіювати реквізити', 'fundtce' ); ?></span>
 
                       <span class="copy__text visually-hidden"><?= $group_copy_all; ?></span>
                     </p>
