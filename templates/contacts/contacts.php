@@ -15,7 +15,7 @@
                 <?php 
                   $button = $item['button'] ?? [];
                 ?>
-                <a class="contact__button btn" href="<?= $button['url']; ?>">
+                <a class="contact__button btn" href="<?= $button['url']; ?>" target="_blank">
                   <svg width="18" height="18">
                     <use xlink:href="<?= get_template_directory_uri(); ?>/assets/img/sprite.svg#<?= $button['type']; ?>"></use>
                   </svg>

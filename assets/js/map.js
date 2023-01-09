@@ -178,27 +178,31 @@ const styles = [
 ];
 
 function initMap() {
-  const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
-    center: window.mapMarker.position,
-    panControl: false,
-    zoomControl: false,
-    mapTypeControl: false,
-    scaleControl: false,
-    streetViewControl: false,
-    overviewMapControl: false,
-    rotateControl: false,
-    fullscreenControl: false,
-    disableDefaultUI: false,
-  });
+  const mapEl = document.querySelector('#map');
 
-  map.setOptions({ styles: styles });
+  if (mapEl) {
+    const map = new google.maps.Map(mapEl, {
+      zoom: 16,
+      center: window.mapMarker.position,
+      panControl: false,
+      zoomControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      overviewMapControl: false,
+      rotateControl: false,
+      fullscreenControl: false,
+      disableDefaultUI: false,
+    });
 
-  let marker = new google.maps.Marker({
-    map,
-    ...window.mapMarker,
-  });
+    map.setOptions({ styles: styles });
 
-  marker.setMap(map);
+    let marker = new google.maps.Marker({
+      map,
+      ...window.mapMarker,
+    });
+
+    marker.setMap(map);
+  }
 }
 

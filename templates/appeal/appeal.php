@@ -20,7 +20,7 @@
             <div class="appeal__contact contact">
               <h4 class="contact__title text-2 text--grey"><?= $contact['title']; ?></h4>
 
-              <a class="contact__button btn" href="<?= $contact['button']['url']; ?>">
+              <a class="contact__button btn" href="<?= $contact['button']['url']; ?>" target="_blank">
                 <svg width="18" height="18">
                   <use xlink:href="<?= get_template_directory_uri(); ?>/assets/img/sprite.svg#<?= $contact['button']['type']; ?>"></use>
                 </svg>
