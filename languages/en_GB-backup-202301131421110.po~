@@ -1,14 +1,13 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Fund TCE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 12:54+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"POT-Creation-Date: 2022-12-21 17:09+0000\n"
+"PO-Revision-Date: 2023-01-13 14:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (UK)\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,41 +65,43 @@ msgstr ""
 
 #: templates/fund.php:19
 msgid "Інші варіанти оплати"
-msgstr ""
+msgstr "More payment options"
 
 #: footer.php:39 templates/appeal/appeal.php:112
 msgid "БО “Час чистого довкілля”"
-msgstr ""
+msgstr "CF “Chas chystoho dovkillia”"
 
 #: templates/fund.php:7
 msgid "Бажаєте допомогти?"
-msgstr ""
+msgstr "Want to help?"
 
 #: header.php:46
 msgid "Головна"
-msgstr ""
+msgstr "Home"
 
 #: templates/requisites/requisites.php:9
 msgid "Не скопійовано в буфер обміну. Потрібен протокол HTTPS"
 msgstr ""
+"\n"
+"Not copied to clipboard. HTTPS is required"
 
 #: footer.php:19 header.php:36 header.php:57 templates/fund.php:44
 #: templates/appeal/appeal.php:112
 msgid "Підтримати фонд"
-msgstr ""
+msgstr "Donate п"
 
 #: templates/fund.php:16
 msgid "Разова допомога через LiqPay"
-msgstr ""
+msgstr "Donate via LiqPay"
 
 #: templates/requisites/requisites.php:8
 msgid "Скопійовано в буфер обміну"
-msgstr ""
+msgstr "Copied to clipboard"
 
 #: templates/requisites/requisites.php:62
 msgid "Скопіювати реквізити"
-msgstr ""
+msgstr "Copy details"
 
 #: templates/fund.php:40
 msgid "інша сума"
-msgstr ""
+msgstr "other amount"

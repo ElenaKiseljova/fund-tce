@@ -36,15 +36,14 @@
 
       <div class="footer__bottom">
         <p>
-          <?php 
-            $found_name = sprintf('%s “%s”',
-                __( 'БО', 'fundtce' ),
-                __( 'Час чистого довкілля', 'fundtce' ),
-              );
-          ?>
-          © <?= $found_name; ?>
+          © <?= __( 'БО “Час чистого довкілля”', 'fundtce' ); ?>
         </p>
-        <p><?= date('Y'); ?></p>
+
+        <div class=right>
+          <a href="https://wnauts.com/" target="_blank">Webnauts</a>
+          <p><?= date('Y'); ?></p>
+        </div>
+        
       </div>
     </div>
   </div>

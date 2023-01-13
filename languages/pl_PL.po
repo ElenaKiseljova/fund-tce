@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fund TCE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-13 08:46+0000\n"
-"PO-Revision-Date: 2022-12-13 08:47+0000\n"
+"POT-Creation-Date: 2022-12-21 17:09+0000\n"
+"PO-Revision-Date: 2023-01-13 12:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
@@ -45,6 +45,14 @@ msgid "Other Page"
 msgstr ""
 
 #. Name of the template
+msgid "Reports Page"
+msgstr ""
+
+#. Name of the template
+msgid "Requisites Page"
+msgstr ""
+
+#. Name of the template
 msgid "Team Page"
 msgstr ""
 
@@ -56,31 +64,43 @@ msgstr ""
 msgid "Webnauts"
 msgstr ""
 
-#: templates/fund.php:4
+#: templates/fund.php:19
+msgid "Інші варіанти оплати"
+msgstr "Inne opcje płatności"
+
+#: footer.php:39 templates/appeal/appeal.php:112
+msgid "БО “Час чистого довкілля”"
+msgstr "FC “Chas chystoho dovkillia”"
+
+#: templates/fund.php:7
 msgid "Бажаєте допомогти?"
-msgstr ""
+msgstr "Chcesz pomóc?"
 
-#: templates/fund.php:25
-msgid ""
-"Ваші пожертвування допоможуть українцям вийти зі скрутної ситуації в житті"
-msgstr ""
-
-#: header.php:38
+#: header.php:46
 msgid "Головна"
-msgstr ""
+msgstr "Główna"
 
-#: footer.php:11 header.php:28 header.php:49 templates/fund.php:51
+#: templates/requisites/requisites.php:9
+msgid "Не скопійовано в буфер обміну. Потрібен протокол HTTPS"
+msgstr "Nie skopiowano do schowka. HTTPS jest wymagany"
+
+#: footer.php:19 header.php:36 header.php:57 templates/fund.php:44
+#: templates/appeal/appeal.php:112
 msgid "Підтримати фонд"
-msgstr ""
+msgstr "Donate"
 
-#: templates/fund.php:15
-msgid "Разова допомога"
-msgstr ""
+#: templates/fund.php:16
+msgid "Разова допомога через LiqPay"
+msgstr "Przekaż darowiznę przez LiqPay"
 
-#: templates/fund.php:18
-msgid "Щомісячна допомога"
-msgstr ""
+#: templates/requisites/requisites.php:8
+msgid "Скопійовано в буфер обміну"
+msgstr "Skopiowane do schowka"
 
-#: templates/fund.php:47
+#: templates/requisites/requisites.php:62
+msgid "Скопіювати реквізити"
+msgstr "Skopiuj szczegóły"
+
+#: templates/fund.php:40
 msgid "інша сума"
-msgstr ""
+msgstr "inna kwota"

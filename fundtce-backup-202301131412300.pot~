@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fund TCE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 12:54+0000\n"
+"POT-Creation-Date: 2022-12-21 17:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -45,10 +45,6 @@ msgid "Other Page"
 msgstr ""
 
 #. Name of the template
-msgid "Reports Page"
-msgstr ""
-
-#. Name of the template
 msgid "Requisites Page"
 msgstr ""
 
@@ -68,15 +64,11 @@ msgstr ""
 msgid "Інші варіанти оплати"
 msgstr ""
 
-#: footer.php:39 templates/appeal/appeal.php:112
-msgid "БО “Час чистого довкілля”"
-msgstr ""
-
 #: templates/fund.php:7
 msgid "Бажаєте допомогти?"
 msgstr ""
 
-#: header.php:46
+#: header.php:38
 msgid "Головна"
 msgstr ""
 
@@ -84,8 +76,7 @@ msgstr ""
 msgid "Не скопійовано в буфер обміну. Потрібен протокол HTTPS"
 msgstr ""
 
-#: footer.php:19 header.php:36 header.php:57 templates/fund.php:44
-#: templates/appeal/appeal.php:112
+#: footer.php:11 header.php:28 header.php:49 templates/fund.php:44
 msgid "Підтримати фонд"
 msgstr ""
 
@@ -95,10 +86,6 @@ msgstr ""
 
 #: templates/requisites/requisites.php:8
 msgid "Скопійовано в буфер обміну"
-msgstr ""
-
-#: templates/requisites/requisites.php:62
-msgid "Скопіювати реквізити"
 msgstr ""
 
 #: templates/fund.php:40

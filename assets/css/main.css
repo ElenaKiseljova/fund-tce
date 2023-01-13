@@ -1627,6 +1627,16 @@ input[type='radio']:checked + .btn {
   color: var(--black);
 }
 
+.footer__bottom .right {
+  display: flex;
+}
+
+.footer__bottom .right a {
+  margin-right: 10px;
+  color: #000;
+  font-size: 14px;
+}
+
 /*submenu*/
 
 .dropdown__list li.sub {

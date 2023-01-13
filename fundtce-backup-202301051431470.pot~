@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fund TCE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 12:54+0000\n"
+"POT-Creation-Date: 2023-01-05 14:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -68,10 +68,6 @@ msgstr ""
 msgid "Інші варіанти оплати"
 msgstr ""
 
-#: footer.php:39 templates/appeal/appeal.php:112
-msgid "БО “Час чистого довкілля”"
-msgstr ""
-
 #: templates/fund.php:7
 msgid "Бажаєте допомогти?"
 msgstr ""
@@ -85,7 +81,6 @@ msgid "Не скопійовано в буфер обміну. Потрібен 
 msgstr ""
 
 #: footer.php:19 header.php:36 header.php:57 templates/fund.php:44
-#: templates/appeal/appeal.php:112
 msgid "Підтримати фонд"
 msgstr ""
 
