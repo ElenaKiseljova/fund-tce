@@ -36,8 +36,8 @@
           <input class="visually-hidden" type="radio" name="amount" id="amount-5" value="1000">
           <label for="amount-5" class="btn fund__sum">1000 &#8372;</label>
           
-          <input class="visually-hidden" type="radio" name="amount" id="amount-6" value="null">
-          <label for="amount-6" class="btn fund__sum"><?= __('інша сума', 'fundtce'); ?></label>
+          <input class="visually-hidden" type="radio" name="amount" id="amount-6" value="2000">
+          <label for="amount-6" class="btn fund__sum">2000 &#8372;</label>
         </div>
 
         <button class="btn btn--black fund__btn">

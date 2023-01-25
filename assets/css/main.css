@@ -481,9 +481,9 @@ input[type='radio']:checked + .btn {
   width: 110px;
 }
 
-.fund__sum:last-of-type {
+/* .fund__sum:last-of-type {
   font-size: 14px;
-}
+} */
 
 .fund__btn {
   width: 300px;
@@ -2770,9 +2770,9 @@ input[type='radio']:checked + .btn {
     width: 88px;
   }
 
-  .fund__sum:last-of-type {
+  /* .fund__sum:last-of-type {
     font-size: 12px;
-  }
+  } */
 
   .fund__btn {
     width: 100%;

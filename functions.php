@@ -44,11 +44,21 @@ function fundtce_scripts () {
   }
 
   /** Animations START */
-  wp_enqueue_script('ScrollTrigger', get_template_directory_uri() . '/assets/js/libs/ScrollTrigger.js', $deps = array(), $ver = null, $in_footer = true );
+  wp_enqueue_script('scroll-trigger', get_template_directory_uri() . '/assets/js/libs/scroll-trigger.js', $deps = array(), $ver = null, $in_footer = true );
   wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', $deps = array(), $ver = null, $in_footer = true);
   /** Animations END */
 
   wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $deps = array(), $ver = null, $in_footer = true);
+
+  wp_enqueue_script('liqpay', get_template_directory_uri() . '/assets/js/liqpay.js', $deps = array(), $ver = null, $in_footer = true);
+
+  // AJAX
+  $args = array(
+    'url' => admin_url('admin-ajax.php'),
+    'nonce' => wp_create_nonce('liqpay.js_nonce'),
+  );  
+
+  wp_localize_script( 'liqpay', 'fundtce_ajax', $args);  
 }
 
 // After setup
@@ -139,5 +149,68 @@ function fundtce_draw_menu($name = '', $mode = 'desktop')
     }
   
     return;
+  }
+
+  /* ==============================================
+  ********  //LiqPay
+  =============================================== */
+  if( wp_doing_ajax() ) {
+    add_action('wp_ajax_fundtce_ajax_liqpay', 'fundtce_ajax_liqpay');
+    add_action('wp_ajax_nopriv_fundtce_ajax_liqpay', 'fundtce_ajax_liqpay'); 
+  }
+
+  function fundtce_ajax_liqpay() {
+    // Первым делом проверяем параметр безопасности
+    check_ajax_referer('liqpay.js_nonce', 'security');
+
+    $args = $_POST;
+
+    if ( !empty($args) ) {
+      $liqpay = get_field( 'liqpay', 'options' ) ?? [];
+      $public_key = $liqpay['public_key'] ?? '';
+      $private_key = $liqpay['private_key'] ?? '';
+
+      if ( !empty($public_key) && !empty($private_key)) {
+        $amount = $args['amount'] ?? 0;
+
+        $data = [
+          'public_key' => $public_key,
+          'version' => 3,
+          'action' => 'pay',
+          'amount' => $amount,
+          'currency' => 'UAH',
+          'description' => __( 'Підтримати фонд', 'fundtce' ),
+          'order_id' => uniqid('fundtce_', true),
+        ];
+
+        $data_json = json_encode( $data );
+        $data_base64_encode = base64_encode( $data_json );
+        $sign_string = $private_key . $data_base64_encode . $private_key;
+        $signature = base64_encode(sha1($sign_string, 1));
+
+        $form = '
+          <form class="visually-hidden" id="formLiqPay" method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8">
+            <input type="hidden" name="data" value="' . $data_base64_encode  . '"/>
+            <input type="hidden" name="signature" value="' . $signature . '"/>
+            <input type="image" src="//static.liqpay.ua/buttons/p1ru.radius.png"/>
+          </form>
+        ';
+
+        wp_send_json_success( [
+          'message' => 'Идет перенаправление на LiqPay',
+          'form' => $form,
+        ] );
+      } else {
+        wp_send_json_error( [
+          'message' => 'Отсутствует публичный или приватный ключ LiqPay',
+        ] );
+      }
+    } else {
+      wp_send_json_error( [
+        'message' => 'Отсутствуют данные для запроса к LiqPay',
+      ] );
+    }
+
+    die();
   }
 ?>
