@@ -22,8 +22,8 @@
         if ( $gal && is_array($gal) && !is_wp_error($gal) ) {
           foreach ($gal as $item) {
           ?>
-            <div class="swiper-slide gallery__photo">
-              <img src="<?php echo $item['image'] ?>" alt="gallery photo" />
+            <div class="swiper-slide gallery__slide">
+              <div class="gallery__photo"><img src="<?php echo $item['image'] ?>" alt="gallery photo" /></div>              
             </div>
           <?php
           }

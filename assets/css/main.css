@@ -1153,11 +1153,19 @@ input[type='radio']:checked + .btn {
 }
 
 .gallery__slider {
+  align-items: stretch;
+
   cursor: -webkit-grab;
   cursor: grab;
 }
 
+.gallery__slide {
+  height: auto;
+}
+
 .gallery__photo {
+  width: 100%;
+
   max-height: 487px;
   border-radius: 20px;
   overflow: hidden;

@@ -43,6 +43,11 @@ function fundtce_scripts () {
     wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/js/libs/fancybox.umd.js', $deps = array(), $ver = null, $in_footer = true );
   }
 
+  /** Animations START */
+  wp_enqueue_script('ScrollTrigger', get_template_directory_uri() . '/assets/js/libs/ScrollTrigger.js', $deps = array(), $ver = null, $in_footer = true );
+  wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', $deps = array(), $ver = null, $in_footer = true);
+  /** Animations END */
+
   wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $deps = array(), $ver = null, $in_footer = true);
 }
 
