@@ -8,8 +8,12 @@
         >
           <?php the_field('help_title'); ?>
         </h2>
-        <div class="help__body">
-            <div class="help__img">
+        <div 
+          class="help__body js-paralax"
+          data-scroll data-scroll-class="show" 
+          data-scroll-repeat="true"
+        >
+            <div class="help__img js-paralax-inner" style="--delay: 0.4s">
                 <img src="<?php the_field('help_img'); ?>" alt="Ukraine flag" />
             </div>
             <div class="help__block">
@@ -34,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="help__logo">
+    <div class="help__logo" data-scroll data-scroll-speed="5">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo" />
     </div>
   </div>

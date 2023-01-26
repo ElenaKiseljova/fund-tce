@@ -10,8 +10,6 @@ get_header();?>
   get_template_part( 'templates/fund' );
 
   get_template_part( 'templates/content/posts' );
-
-  get_template_part( 'templates/content/posts' );
   get_template_part( 'templates/content/descr' );
   get_template_part( 'templates/content/help' );
 

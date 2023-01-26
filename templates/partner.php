@@ -19,11 +19,14 @@
             </a>
           <?php endif; ?>          
       </div>
-      <div class="partner__grid">
+      <div class="partner__grid js-paralax"
+        data-scroll data-scroll-class="show" 
+        data-scroll-repeat="true"
+      >
         <?php if ( $ptns && is_array($ptns) && !is_wp_error( $ptns ) ) : ?>
           <?php          
-          foreach ($ptns as $item) : ?>
-              <div class="partner__img">
+          foreach ($ptns as $key => $item) : ?>
+              <div class="partner__img js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s">
                   <img src="<?php echo $item['image'] ?>" alt="partner logo"/>
               </div>
           <?php endforeach; ?>
@@ -36,7 +39,10 @@
         </a>
       <?php endif; ?>
      
-      <div class="partner__logo">
+      <div 
+        class="partner__logo"
+        data-scroll data-scroll-speed="5"
+      >
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo"/>
       </div>
   </div>

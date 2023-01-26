@@ -8,8 +8,12 @@
 ?>
     </main>
     
-    <footer class="footer" data-scroll-section>
-      <div class="footer__wrapper">
+    <footer class="footer js-paralax"
+        data-scroll-section
+        data-scroll data-scroll-class="show" 
+        data-scroll-repeat="true"
+      >
+      <div class="footer__wrapper js-paralax-inner" style="--delay: 0.4s">
         <div class="container">
           <div class="footer__top">
             <div class="footer__box">

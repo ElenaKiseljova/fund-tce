@@ -27,6 +27,56 @@ document.addEventListener('DOMContentLoaded', () => {
       title.innerHTML = innerSeparated;
     });
   }
+
+  // Тексты
+  const texts = document.querySelectorAll('.js-transition-text');
+
+  if (texts.length) {
+    texts.forEach((text) => {
+      // Разделение на слова
+      const wordsHTML = text.innerHTML
+        .trim()
+        .split(' ')
+        .map((word) => `<span>${word}</span>`)
+        .join(' ');
+
+      // Заполнение словами
+      text.innerHTML = wordsHTML;
+
+      // Разбиение на строки
+      const wordEls = text.querySelectorAll(':scope > span');
+
+      const lines = [];
+      let wordOffsetTop;
+      let i = 0;
+      wordEls.forEach((wordEl) => {
+        if (typeof wordOffsetTop === 'undefined') {
+          wordOffsetTop = wordEl.offsetTop;
+
+          lines[i] = [wordEl.outerHTML];
+        } else if (wordOffsetTop === wordEl.offsetTop) {
+          lines[i].push(wordEl.outerHTML);
+        } else if (wordOffsetTop !== wordEl.offsetTop) {
+          wordOffsetTop = wordEl.offsetTop;
+          i++;
+
+          lines[i] = [wordEl.outerHTML];
+        }
+      });
+
+      // Заполнение строками
+      text.innerHTML = lines
+        .map(
+          (line, idx) =>
+            `<span class="js-transition-text-line" style="--delay: 0.${
+              4 + idx
+            }s;">${line.join(' ')}</span>`
+        )
+        .join('');
+    });
+  }
+
+  console.log(navigator?.userAgentData);
 });
 
 window.addEventListener('load', () => {

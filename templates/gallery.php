@@ -4,7 +4,9 @@
   $gal_btn_to = get_field( 'gal_btn_to' );
 ?>
 
-<section class="gallery <?= (!$gal_btn_to || $gal_btn_to === '') && (!$gal_title || $gal_title === '')  ? 'pt-0' : ''; ?>" id="gallery">
+<section 
+  class="gallery <?= (!$gal_btn_to || $gal_btn_to === '') && (!$gal_title || $gal_title === '')  ? 'pt-0' : ''; ?>" id="gallery"
+>
   <div class="container swiper swiperGallery">
     <?php if ( ($gal_title && $gal_title !== '') || ($gal_btn_to && $gal_btn_to !== '') ) : ?>
       <div class="gallery__head">
@@ -23,13 +25,17 @@
     <?php endif; ?>
       
 
-    <div class="swiper-wrapper gallery__slider">
+    <div 
+      class="swiper-wrapper gallery__slider js-paralax "
+      data-scroll data-scroll-class="show" 
+      data-scroll-repeat="true"
+    >
       <?php
         if ( $gal && is_array($gal) && !is_wp_error($gal) ) {
-          foreach ($gal as $item) {
+          foreach ($gal as $key => $item) {
           ?>
             <div class="swiper-slide gallery__slide">
-              <div class="gallery__photo"><img src="<?php echo $item['image'] ?>" alt="gallery photo" /></div>              
+              <div class="gallery__photo js-paralax-item" style="--delay: 0.<?= 4 + $key; ?>s"><img src="<?php echo $item['image'] ?>" alt="gallery photo" /></div>              
             </div>
           <?php
           }

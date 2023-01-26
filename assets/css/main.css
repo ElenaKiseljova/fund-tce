@@ -973,37 +973,59 @@ input[type='radio']:checked + .btn {
   cursor: pointer;
 }
 
-.scope__item.active .scope__head,
-.scope__item:hover .scope__head {
-  background-color: var(--green);
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
+@media (any-hover: hover) {
+  .scope__item:hover .scope__head {
+    background-color: var(--green);
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+
+  .scope__item:hover .scope__head p {
+    color: var(--white);
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+
+  .scope__item:hover svg {
+    fill: var(--white);
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
 }
 
-.scope__item.active .scope__head p,
-.scope__item:hover .scope__head p {
-  color: var(--white);
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
+@media (any-hover: none) {
+  .scope__item.active .scope__head {
+    background-color: var(--green);
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
 
-.scope__item.active svg,
-.scope__item:hover svg {
-  fill: var(--white);
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
+  .scope__item.active .scope__head p {
+    color: var(--white);
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
 
-.scope__item.active svg {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
+  .scope__item.active svg {
+    fill: var(--white);
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+
+  .scope__item.active svg {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
 }
 
 .scope__name {
@@ -1327,10 +1349,7 @@ input[type='radio']:checked + .btn {
 }
 
 .promo__container {
-  display: flex;
-
-  align-items: flex-end;
-  justify-content: space-between;
+  position: relative;
 
   width: 100%;
 }
@@ -1346,6 +1365,11 @@ input[type='radio']:checked + .btn {
 }
 
 .promo__container p {
+  position: absolute;
+
+  right: 35px;
+  bottom: 0;
+
   max-width: 270px;
 
   font-family: inherit;
@@ -2412,12 +2436,12 @@ input[type='radio']:checked + .btn {
 }
 
 @media (max-width: 1399px) {
-  .promo .promo__container {
-    flex-direction: column;
-  }
-
   .promo__container p {
+    position: static;
+
     max-width: 100%;
+
+    margin-top: 20px;
   }
 
   .fund__top {
@@ -2959,6 +2983,12 @@ input[type='radio']:checked + .btn {
     color: var(--black);
     margin-top: 40px;
     margin-bottom: 10px;
+  }
+
+  .start__title.js-transition-title,
+  .start__name.js-transition-title {
+    --color: rgba(29, 29, 29, 0.2);
+    --color-before: var(--black);
   }
 
   .start__name {

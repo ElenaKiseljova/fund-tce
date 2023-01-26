@@ -7,13 +7,16 @@
     >
       <?php the_field('post_title'); ?>
     </h2>
-    <div class="content__body">
+    <div class="content__body js-paralax"
+        data-scroll data-scroll-class="show" 
+        data-scroll-repeat="true"
+      >
 
         <?php
         $posts1 =  get_field('posts');
-        foreach ($posts1 as $post1) : ?>
+        foreach ($posts1 as $key => $post1) : ?>
 
-        <a href="<?php echo $post1['post_link']?>" class="card content__card">
+        <a href="<?php echo $post1['post_link']?>" class="card content__card js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s">
             <div class="card__img">
                 <img src="<?php echo $post1['image']?>" alt="content" />
             </div>
@@ -37,7 +40,7 @@
 
     </div>
   </div>
-  <div class="content__logo">
+  <div class="content__logo" data-scroll data-scroll-speed="5">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo" />
   </div>
 </section>

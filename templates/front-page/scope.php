@@ -2,7 +2,11 @@
   $items = get_field('items');
 ?>
 <section class="scope" id="scope">
-  <div class="container scope__container">
+  <div 
+    class="container scope__container js-paralax"
+    data-scroll data-scroll-class="show" 
+    data-scroll-repeat="true"
+  >
       <h2 
         class="title scope__title js-transition-title"
         data-scroll data-scroll-class="show" 
@@ -15,8 +19,8 @@
             <?php if ( $items && is_array($items) && !is_wp_error( $items ) ) : ?>
               <?php              
               $i = 0;
-              foreach ($items as $item) : ?>
-                  <li class="scope__item <?php if($i === 0){?>active<?php }?>">
+              foreach ($items as $key => $item) : ?>
+                  <li class="scope__item js-paralax-item <?= $i === 0 ? 'active' : ''; ?>" style="--delay: 0.<?= 4 + $key; ?>s;">          
                       <div class="scope__head">
                           <p class="text-1 scope__name"><?php echo $item['scope_name']?></p>
                           <svg width="20" height="21">
@@ -47,7 +51,10 @@
               <?php
               $a = 0;
               foreach ($items as $item) : ?>
-              <li class="card card--scope scope__card <?php if($a === 0){?>active<?php }?>">
+              <li 
+                class="card card--scope scope__card  js-paralax-inner <?= $a === 0 ? 'active' : ''; ?>"
+                style="--delay: 0.4s"
+              >
                   <div class="card__img">
                       <img src="<?php echo $item['card_img']?>" alt="scope image"/>
                   </div>

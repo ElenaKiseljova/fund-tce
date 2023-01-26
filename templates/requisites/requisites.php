@@ -41,7 +41,13 @@
               $groups = $requisite['groups'] ?? [];
             ?>
 
-            <h3 class="requisites__subtitle title-2"><?= $requisite_title; ?></h3>
+            <h3 
+              class="requisites__subtitle title-2 js-transition-title"
+              data-scroll data-scroll-class="show" 
+              data-scroll-repeat="true"
+            >
+              <?= $requisite_title; ?>
+            </h3>
 
             <?php if ( $requisite_type_select === 'table' && $groups && is_array($groups) && !is_wp_error( $groups ) ) : ?>
               <ul class="requisites__groups">

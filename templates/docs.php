@@ -20,13 +20,17 @@
             </a>
           <?php endif; ?>          
       </div>
-      <div class="swiper-wrapper docs__grid">
+      <div 
+        class="swiper-wrapper docs__grid js-paralax"
+        data-scroll data-scroll-class="show" 
+        data-scroll-repeat="true"
+      >
           <?php if ( $docs && is_array($docs) && !is_wp_error( $docs ) ) : ?>
-            <?php foreach ($docs as $item) : ?>
+            <?php foreach ($docs as $key => $item) : ?>
               <?php 
                 $fancybox_src = $item['file'] ? $item['file'] :  $item['image'];
               ?>
-              <div class="swiper-slide docs__img">
+              <div class="swiper-slide docs__img js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s">
                 <a data-fancybox data-src="<?= $fancybox_src; ?>" href="#">
                   <img src="<?= $item['image']; ?>" alt="document"/>
                 </a>
