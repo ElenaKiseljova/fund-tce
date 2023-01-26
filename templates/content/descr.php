@@ -1,8 +1,7 @@
 <section class="content">
   <div class="container">
     <h2
-      class="transition-title-line"
-      data-text="<?php the_field('descr_title'); ?>"
+      class="js-transition-title"
       data-scroll data-scroll-class="show" 
       data-scroll-repeat="true"
     >

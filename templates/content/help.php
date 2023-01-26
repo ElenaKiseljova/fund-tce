@@ -2,8 +2,7 @@
   <div class="help__wrapper">
     <div class="container help__container">
         <h2 
-          class="title help__title transition-title-line"
-          data-text="<?php the_field('help_title'); ?>"
+          class="title help__title js-transition-title"
           data-scroll data-scroll-class="show" 
           data-scroll-repeat="true"
         >

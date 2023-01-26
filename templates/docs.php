@@ -7,8 +7,7 @@
   <div class="container docs__container swiper swiperDocs">
       <div class="docs__head">
           <h2 
-            class="title transition-title-line"
-            data-text="<?php the_field('documents_title'); ?>"
+            class="title js-transition-title"
             data-scroll data-scroll-class="show" 
             data-scroll-repeat="true"
           >

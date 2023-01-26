@@ -7,8 +7,7 @@
 <section class="need-help">
   <div class="need-help__container container logo-bg">
     <h2 
-      class="title need-help__title transition-title-line"
-      data-text="<?= $help_title; ?>"
+      class="title need-help__title js-transition-title"
       data-scroll data-scroll-class="show" 
       data-scroll-repeat="true"
     >

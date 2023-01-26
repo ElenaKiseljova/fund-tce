@@ -5,8 +5,7 @@
 
   <div class="fund__container container <?= is_page_template( 'page-contacts.php' ) ? 'logo-bg' : ''; ?>">
     <h2 
-      class="fund__title title <?= !is_page_template( 'page-contacts.php' ) ? 'visually-hidden' : ''; ?> transition-title-line"
-      data-text="<?= __('Бажаєте допомогти?', 'fundtce'); ?>"
+      class="fund__title title <?= !is_page_template( 'page-contacts.php' ) ? 'visually-hidden' : ''; ?> js-transition-title"
       data-scroll data-scroll-class="show" 
       data-scroll-repeat="true"
     >

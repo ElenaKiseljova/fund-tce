@@ -6,8 +6,7 @@
         <div class="container founder__container">
             <div class="founder__info">
                 <h2 
-                  class="title founder__title transition-title-line"
-                  data-text="<?php the_field('founder_title'); ?>"
+                  class="title founder__title js-transition-title"
                   data-scroll data-scroll-class="show" 
                   data-scroll-repeat="true"
                 >

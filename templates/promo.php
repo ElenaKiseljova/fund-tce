@@ -7,8 +7,7 @@
   <div class="promo__wrapper">
       <div class="container promo__container">
           <h1
-            class="transition-title-line"
-            data-text="<?php the_title(  ); ?>"
+            class="js-transition-title"
             data-scroll data-scroll-class="show" 
             data-scroll-repeat="true"
           >

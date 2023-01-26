@@ -76,7 +76,7 @@ html.has-scroll-dragging {
   }
 }
 
-.transition-title-line {
+.js-transition-title-line {
   position: relative;
   z-index: 1;
 
@@ -94,7 +94,7 @@ html.has-scroll-dragging {
   transition: color 0s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-.transition-title-line:before {
+.js-transition-title-line:before {
   color: var(--color-before, var(--black));
   content: attr(data-text);
   position: absolute;
@@ -111,7 +111,7 @@ html.has-scroll-dragging {
   will-change: clip-path;
 }
 
-.transition-title-line.show:before {
+.js-transition-title.show .js-transition-title-line:before {
   -webkit-animation: 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal
     forwards transition_title__move_mask;
   animation: 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards

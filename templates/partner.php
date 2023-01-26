@@ -6,8 +6,7 @@
   <div class="container partner__container">
       <div class="partner__head">
           <h2 
-            class="title transition-title-line"
-            data-text="<?php the_field('partners_title'); ?>"
+            class="title js-transition-title"
             data-scroll data-scroll-class="show" 
             data-scroll-repeat="true"
           >

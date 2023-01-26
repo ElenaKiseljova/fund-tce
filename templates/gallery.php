@@ -9,8 +9,7 @@
     <?php if ( ($gal_title && $gal_title !== '') || ($gal_btn_to && $gal_btn_to !== '') ) : ?>
       <div class="gallery__head">
           <h2 
-            class="title transition-title-line"
-            data-text="<?php the_field('gal_title'); ?>"
+            class="title js-transition-title"
             data-scroll data-scroll-class="show" 
             data-scroll-repeat="true"
           >

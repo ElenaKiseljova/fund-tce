@@ -2,8 +2,7 @@
   <div class="container mission__container">
       <div class="mission__left">
           <h2 
-            class="title mission__title transition-title-line"
-            data-text="<?php the_field('mission_title'); ?>"
+            class="title mission__title js-transition-title"
             data-scroll data-scroll-class="show" 
             data-scroll-repeat="true"
           >

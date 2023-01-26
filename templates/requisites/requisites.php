@@ -12,8 +12,7 @@
 <section class="requisites" id="requisites">
   <div class="requisites__container container">
     <h2 
-      class="title requisites__title transition-title-line"
-      data-text="<?= $requisites_title; ?>"
+      class="title requisites__title js-transition-title"
       data-scroll data-scroll-class="show" 
       data-scroll-repeat="true"
     >

@@ -4,8 +4,7 @@
 <section class="scope" id="scope">
   <div class="container scope__container">
       <h2 
-        class="title scope__title transition-title-line"
-        data-text="<?php the_field('scope_title'); ?>"
+        class="title scope__title js-transition-title"
         data-scroll data-scroll-class="show" 
         data-scroll-repeat="true"
       >

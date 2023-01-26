@@ -5,8 +5,7 @@
 <section class="team">
   <div class="container team__container">
     <h2 
-      class="title team__title transition-title-line"
-      data-text="<?= $team_title; ?>"
+      class="title team__title js-transition-title"
       data-scroll data-scroll-class="show" 
       data-scroll-repeat="true"
     >

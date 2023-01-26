@@ -53,10 +53,8 @@ function fundtce_scripts () {
   wp_enqueue_script('liqpay', get_template_directory_uri() . '/assets/js/liqpay.js', $deps = array(), $ver = null, $in_footer = true);
 
   /** Animations START */
-  // wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/libs/gsap.min.js', $deps = array(), $ver = null, $in_footer = true );
-  // wp_enqueue_script('scroll-trigger', get_template_directory_uri() . '/assets/js/libs/scroll-trigger.js', $deps = array(), $ver = null, $in_footer = true );
-  wp_enqueue_script('locomotive-scroll', get_template_directory_uri() . '/assets/js/libs/locomotive-scroll.min.js', $deps = array(), $ver = null, $in_footer = true );
-  wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', $deps = array(), $ver = null, $in_footer = true);
+    wp_enqueue_script('locomotive-scroll', get_template_directory_uri() . '/assets/js/libs/locomotive-scroll.min.js', $deps = array(), $ver = null, $in_footer = true );
+    wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', $deps = array(), $ver = null, $in_footer = true);
   /** Animations END */
 
   // AJAX

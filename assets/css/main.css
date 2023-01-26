@@ -104,7 +104,7 @@ body {
   color: var(--black);
 }
 
-.title.transition-title-line {
+.title.js-transition-title {
   --color: rgba(29, 29, 29, 0.2);
   --color-before: var(--black);
 }
@@ -661,6 +661,9 @@ input[type='radio']:checked + .btn {
 
 .header {
   position: relative;
+
+  z-index: 20;
+
   padding: 18px 0;
 }
 
@@ -842,8 +845,8 @@ input[type='radio']:checked + .btn {
   color: var(--white);
 }
 
-.start__title.transition-title-line,
-.start__name.transition-title-line {
+.start__title.js-transition-title,
+.start__name.js-transition-title {
   --color: rgba(255, 255, 255, 0.2);
   --color-before: var(--white);
 }
