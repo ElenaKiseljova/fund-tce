@@ -1,9 +1,13 @@
 <?php 
   $requisites_page_url = function_exists( 'fundtce_get_special_page' ) && !is_page( fundtce_get_special_page( 'requisites', 'id' ) ) ? fundtce_get_special_page( 'requisites', 'url' ) . '#requisites' : '#requisites';
 ?>
-<section class="fund <?= is_page_template( 'page-contacts.php' ) ? 'fund--contacts' : ''; ?>" id="fund">
+<section 
+  class="fund js-paralax <?= is_page_template( 'page-contacts.php' ) ? 'fund--contacts' : ''; ?>" id="fund"
+  data-scroll data-scroll-class="show" 
+  data-scroll-repeat="true"
+>
 
-  <div class="fund__container container <?= is_page_template( 'page-contacts.php' ) ? 'logo-bg' : ''; ?>">
+  <div class="fund__container container js-paralax-inner <?= is_page_template( 'page-contacts.php' ) ? 'logo-bg' : ''; ?>">
     <h2 
       class="fund__title title <?= !is_page_template( 'page-contacts.php' ) ? 'visually-hidden' : ''; ?> js-transition-title"
       data-scroll data-scroll-class="show" 
@@ -18,14 +22,14 @@
                           ? 'fund__form--contacts' 
                           : 'fund__form--content'); ?>">
 
-      <div class="fund__top">
+      <div class="fund__top js-paralax-item">
         <span class="text-1 fund__tab"><?= __('Разова допомога через LiqPay', 'fundtce'); ?></span>
 
-        <p class="text-1 text--grey fund__desc">
+        <p class="text-1 text--grey fund__desc js-paralax-item">
           <a href="<?= $requisites_page_url; ?>"><?= __('Інші варіанти оплати', 'fundtce'); ?></a>
         </p>
       </div>
-      <div class="fund__bottom">
+      <div class="fund__bottom js-paralax-item" style="--delay: 0.8s;">
         <div class="fund__donations">
           <input class="visually-hidden" type="radio" name="amount" id="amount-1" value="50" checked>
           <label for="amount-1" class="btn fund__sum">50 &#8372;</label>
