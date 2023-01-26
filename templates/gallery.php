@@ -8,7 +8,14 @@
   <div class="container swiper swiperGallery">
     <?php if ( ($gal_title && $gal_title !== '') || ($gal_btn_to && $gal_btn_to !== '') ) : ?>
       <div class="gallery__head">
-          <h2 class="title"><?php the_field('gal_title'); ?></h2>
+          <h2 
+            class="title transition-title-line"
+            data-text="<?php the_field('gal_title'); ?>"
+            data-scroll data-scroll-class="show" 
+            data-scroll-repeat="true"
+          >
+            <?php the_field('gal_title'); ?>
+          </h2>
 
           <?php if ($gal_btn_to && $gal_btn_to !== '') : ?>
             <a href="<?= $gal_btn_to; ?>" class="btn gallery__btn"><?php the_field('gal_btn_text'); ?></a>

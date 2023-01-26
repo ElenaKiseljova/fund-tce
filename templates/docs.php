@@ -6,7 +6,14 @@
 <section class="docs <?= is_front_page(  ) ? '' : 'docs--inner'; ?>" id="docs">
   <div class="container docs__container swiper swiperDocs">
       <div class="docs__head">
-          <h2 class="title"><?php the_field('documents_title'); ?></h2>
+          <h2 
+            class="title transition-title-line"
+            data-text="<?php the_field('documents_title'); ?>"
+            data-scroll data-scroll-class="show" 
+            data-scroll-repeat="true"
+          >
+            <?php the_field('documents_title'); ?>
+          </h2>
 
           <?php if ( $documents_btn_to && $documents_btn_to !== '' ) : ?>
             <a href="<?= $documents_btn_to; ?>" class="btn docs__btn">

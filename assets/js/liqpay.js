@@ -8,7 +8,7 @@ const checkRecaptcha = async (callback) => {
   if (siteKey) {
     await grecaptcha.ready(function () {
       grecaptcha.execute(siteKey, { action: 'submit' }).then(function (token) {
-        console.log('grecaptcha is OK');
+        // console.log('grecaptcha is OK');
 
         noBot = 1;
 

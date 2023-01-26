@@ -6,18 +6,16 @@
 
 <?php get_header(); ?>
 
-<main class="main">
-  <?php 
-    get_template_part( 'templates/promo' );
-  ?>
+<?php 
+  get_template_part( 'templates/promo' );
+?>
 
-  <section class="page">
-    <div class="page__container container">
-      <div class="page__content">
-        <?php the_content(  ); ?>
-      </div>
+<section class="page">
+  <div class="page__container container">
+    <div class="page__content">
+      <?php the_content(  ); ?>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <?php get_footer();?>

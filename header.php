@@ -17,47 +17,50 @@
 </head>
 
 <body>
-<header class="header">
-  <div class="container header__container">
-      <div class="header__head">
-        <?php 
-          get_template_part( 'templates/logo' );
+  <div class="wrapper" data-scroll-container>
+    <header class="header" data-scroll-section>
+      <div class="container header__container">
+          <div class="header__head">
+            <?php 
+              get_template_part( 'templates/logo' );
 
-          get_template_part( 'templates/lang' );
+              get_template_part( 'templates/lang' );
 
-          if ( function_exists( 'fundtce_draw_menu' ) ) {
-            fundtce_draw_menu( 'header_menu_left' );
-            fundtce_draw_menu( 'header_menu' );
-            fundtce_draw_menu( 'header_menu_additional' );
-          }
-        ?>
+              if ( function_exists( 'fundtce_draw_menu' ) ) {
+                fundtce_draw_menu( 'header_menu_left' );
+                fundtce_draw_menu( 'header_menu' );
+                fundtce_draw_menu( 'header_menu_additional' );
+              }
+            ?>
 
-        <a href="<?= $requisites_page_url; ?>"
-            class="btn header__btn"><?= __( 'Підтримати фонд', 'fundtce' ); ?></a>
+            <a href="<?= $requisites_page_url; ?>"
+                class="btn header__btn"><?= __( 'Підтримати фонд', 'fundtce' ); ?></a>
 
-        <button class="burger">
-          <span class="burger__top"></span>
-          <span class="burger__middle"></span>
-          <span class="burger__bottom"></span>
-        </button>
+            <button class="burger">
+              <span class="burger__top"></span>
+              <span class="burger__middle"></span>
+              <span class="burger__bottom"></span>
+            </button>
+          </div>
+
+          <div class="header__body">
+              <a href="<?= get_bloginfo( 'url' ); ?>" class="header__link"><?= __( 'Головна', 'fundtce' ); ?></a>
+              
+              <?php 
+                if ( function_exists( 'fundtce_draw_menu' ) ) {
+                  fundtce_draw_menu( 'header_menu_left', 'mobile' );
+                  fundtce_draw_menu( 'header_menu', 'mobile' );
+                  fundtce_draw_menu( 'header_menu_additional' );
+                }
+              ?>
+
+              <a href="<?= $requisites_page_url; ?>"
+                  class="btn btn--black header__btn"><?= __( 'Підтримати фонд', 'fundtce' ); ?></a>
+          </div>
       </div>
-
-      <div class="header__body">
-          <a href="<?= get_bloginfo( 'url' ); ?>" class="header__link"><?= __( 'Головна', 'fundtce' ); ?></a>
-          
-          <?php 
-            if ( function_exists( 'fundtce_draw_menu' ) ) {
-              fundtce_draw_menu( 'header_menu_left', 'mobile' );
-              fundtce_draw_menu( 'header_menu', 'mobile' );
-              fundtce_draw_menu( 'header_menu_additional' );
-            }
-          ?>
-
-          <a href="<?= $requisites_page_url; ?>"
-              class="btn btn--black header__btn"><?= __( 'Підтримати фонд', 'fundtce' ); ?></a>
+      <div class="header__logo">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo"/>
       </div>
-  </div>
-  <div class="header__logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-min.svg" alt="logo"/>
-  </div>
-</header>
+    </header>
+
+    <main class="main" data-scroll-section>

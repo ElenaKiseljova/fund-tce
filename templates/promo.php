@@ -6,8 +6,13 @@
 <section class="promo" id="promo">
   <div class="promo__wrapper">
       <div class="container promo__container">
-          <h1>
-              <?= get_the_title(  ); ?>
+          <h1
+            class="transition-title-line"
+            data-text="<?php the_title(  ); ?>"
+            data-scroll data-scroll-class="show" 
+            data-scroll-repeat="true"
+          >
+            <?php the_title(  ); ?>
           </h1>
 
           <?php if ( $baner_subtitle && $baner_subtitle !== '' ) : ?>

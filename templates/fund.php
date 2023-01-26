@@ -4,7 +4,14 @@
 <section class="fund <?= is_page_template( 'page-contacts.php' ) ? 'fund--contacts' : ''; ?>" id="fund">
 
   <div class="fund__container container <?= is_page_template( 'page-contacts.php' ) ? 'logo-bg' : ''; ?>">
-    <h2 class="fund__title title <?= !is_page_template( 'page-contacts.php' ) ? 'visually-hidden' : ''; ?>"><?= __('Бажаєте допомогти?', 'fundtce'); ?></h2>
+    <h2 
+      class="fund__title title <?= !is_page_template( 'page-contacts.php' ) ? 'visually-hidden' : ''; ?> transition-title-line"
+      data-text="<?= __('Бажаєте допомогти?', 'fundtce'); ?>"
+      data-scroll data-scroll-class="show" 
+      data-scroll-repeat="true"
+    >
+      <?= __('Бажаєте допомогти?', 'fundtce'); ?>
+    </h2>
 
     <form action="" class="fund__form  <?= is_front_page(  ) 
                         ? 'fund__form--front' 

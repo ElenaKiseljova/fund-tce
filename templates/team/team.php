@@ -4,7 +4,14 @@
 ?>
 <section class="team">
   <div class="container team__container">
-    <h2 class="team__title title"><?= $team_title; ?></h2>
+    <h2 
+      class="title team__title transition-title-line"
+      data-text="<?= $team_title; ?>"
+      data-scroll data-scroll-class="show" 
+      data-scroll-repeat="true"
+    >
+      <?= $team_title; ?>
+    </h2>
 
     <?php if ( $team_members && is_array( $team_members ) && !is_wp_error( $team_members )) : ?>
       <ul class="team__list logo-bg">

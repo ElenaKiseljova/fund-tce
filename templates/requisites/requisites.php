@@ -11,7 +11,14 @@
 </script>
 <section class="requisites" id="requisites">
   <div class="requisites__container container">
-    <h2 class="requisites__title title"><?= $requisites_title; ?></h2>
+    <h2 
+      class="title requisites__title transition-title-line"
+      data-text="<?= $requisites_title; ?>"
+      data-scroll data-scroll-class="show" 
+      data-scroll-repeat="true"
+    >
+      <?= $requisites_title; ?>
+    </h2>
 
     <?php if ( $requisites_list && is_array($requisites_list) && !is_wp_error( $requisites_list ) ) : ?>
       <ul class="requisites__anchors">

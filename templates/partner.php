@@ -5,7 +5,14 @@
 <section class="partner" id="partners">
   <div class="container partner__container">
       <div class="partner__head">
-          <h2 class="title"><?php the_field('partners_title'); ?></h2>
+          <h2 
+            class="title transition-title-line"
+            data-text="<?php the_field('partners_title'); ?>"
+            data-scroll data-scroll-class="show" 
+            data-scroll-repeat="true"
+          >
+            <?php the_field('partners_title'); ?>
+          </h2>
 
           <?php if ( $partners_btn_to && $partners_btn_to !== '' ) : ?>
             <a href="<?= $partners_btn_to; ?>" class="btn partner__btn">

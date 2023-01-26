@@ -6,12 +6,10 @@
 
 <?php get_header(); ?>
 
-<main class="main">
-  <?php 
-    get_template_part( 'templates/promo' );
+<?php 
+  get_template_part( 'templates/promo' );
 
-    get_template_part( 'templates/reports/reports' );
-  ?>
-</main>
+  get_template_part( 'templates/reports/reports' );
+?>
 
 <?php get_footer();?>

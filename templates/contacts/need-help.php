@@ -6,7 +6,14 @@
 
 <section class="need-help">
   <div class="need-help__container container logo-bg">
-    <h2 class="need-help__title title"><?= $help_title; ?></h2>
+    <h2 
+      class="title need-help__title transition-title-line"
+      data-text="<?= $help_title; ?>"
+      data-scroll data-scroll-class="show" 
+      data-scroll-repeat="true"
+    >
+      <?= $help_title; ?>
+    </h2>
     
     <div class="need-help__columns">
       <?php if ( $help_columns && is_array($help_columns) && !is_wp_error( $help_columns ) ) : ?>

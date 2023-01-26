@@ -6,7 +6,12 @@
 <section class="appeal">
   <div class="appeal__container container logo-bg">
     <div class="appeal__left">
-      <h1 class="appeal__title title">
+      <h1 
+        class="title appeal__title transition-title-line"
+        data-text="<?php the_title(  ); ?>"
+        data-scroll data-scroll-class="show" 
+        data-scroll-repeat="true"
+      >
         <?php the_title(  ); ?>
       </h1>
 

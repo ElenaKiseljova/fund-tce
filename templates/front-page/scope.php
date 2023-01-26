@@ -3,7 +3,14 @@
 ?>
 <section class="scope" id="scope">
   <div class="container scope__container">
-      <h2 class="title scope__title"><?php the_field('scope_title'); ?></h2>
+      <h2 
+        class="title scope__title transition-title-line"
+        data-text="<?php the_field('scope_title'); ?>"
+        data-scroll data-scroll-class="show" 
+        data-scroll-repeat="true"
+      >
+          <?php the_field('scope_title'); ?>
+      </h2>
       <div class="scope__body">
           <ul class="scope__list">
             <?php if ( $items && is_array($items) && !is_wp_error( $items ) ) : ?>

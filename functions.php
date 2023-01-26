@@ -16,7 +16,10 @@ function fundtce_styles () {
 
   wp_enqueue_style('fundtce-style', get_stylesheet_uri());
 
+  /** Animations START */
+  wp_enqueue_style('locomotive-scroll', get_template_directory_uri() . '/assets/css/libs/locomotive-scroll.css');
   wp_enqueue_style('animations', get_template_directory_uri() . '/assets/css/animations.css');
+  /** Animations END */
 }
 
 // Scripts theme
@@ -45,14 +48,16 @@ function fundtce_scripts () {
     wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/js/libs/fancybox.umd.js', $deps = array(), $ver = null, $in_footer = true );
   }
 
-  /** Animations START */
-  wp_enqueue_script('scroll-trigger', get_template_directory_uri() . '/assets/js/libs/scroll-trigger.js', $deps = array(), $ver = null, $in_footer = true );
-  wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', $deps = array(), $ver = null, $in_footer = true);
-  /** Animations END */
-
   wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', $deps = array(), $ver = null, $in_footer = true);
 
   wp_enqueue_script('liqpay', get_template_directory_uri() . '/assets/js/liqpay.js', $deps = array(), $ver = null, $in_footer = true);
+
+  /** Animations START */
+  // wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/libs/gsap.min.js', $deps = array(), $ver = null, $in_footer = true );
+  // wp_enqueue_script('scroll-trigger', get_template_directory_uri() . '/assets/js/libs/scroll-trigger.js', $deps = array(), $ver = null, $in_footer = true );
+  wp_enqueue_script('locomotive-scroll', get_template_directory_uri() . '/assets/js/libs/locomotive-scroll.min.js', $deps = array(), $ver = null, $in_footer = true );
+  wp_enqueue_script('animations', get_template_directory_uri() . '/assets/js/animations.js', $deps = array(), $ver = null, $in_footer = true);
+  /** Animations END */
 
   // AJAX
   $args = array(

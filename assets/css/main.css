@@ -104,6 +104,11 @@ body {
   color: var(--black);
 }
 
+.title.transition-title-line {
+  --color: rgba(29, 29, 29, 0.2);
+  --color-before: var(--black);
+}
+
 .title-2 {
   font-family: inherit;
   font-style: normal;
@@ -835,6 +840,12 @@ input[type='radio']:checked + .btn {
 .start__name {
   font-size: 75px;
   color: var(--white);
+}
+
+.start__title.transition-title-line,
+.start__name.transition-title-line {
+  --color: rgba(255, 255, 255, 0.2);
+  --color-before: var(--white);
 }
 
 .start__img {
