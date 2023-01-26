@@ -15,6 +15,8 @@ function fundtce_styles () {
   }
 
   wp_enqueue_style('fundtce-style', get_stylesheet_uri());
+
+  wp_enqueue_style('animations', get_template_directory_uri() . '/assets/css/animations.css');
 }
 
 // Scripts theme
@@ -166,45 +168,51 @@ function fundtce_draw_menu($name = '', $mode = 'desktop')
     $args = $_POST;
 
     if ( !empty($args) ) {
-      $liqpay = get_field( 'liqpay', 'options' ) ?? [];
-      $public_key = $liqpay['public_key'] ?? '';
-      $private_key = $liqpay['private_key'] ?? '';
+      if ( $args[antibot] == 1) {
+        $liqpay = get_field( 'liqpay', 'options' ) ?? [];
+        $public_key = $liqpay['public_key'] ?? '';
+        $private_key = $liqpay['private_key'] ?? '';
 
-      if ( !empty($public_key) && !empty($private_key)) {
-        $amount = $args['amount'] ?? 0;
+        if ( !empty($public_key) && !empty($private_key)) {
+          $amount = $args['amount'] ?? 0;
 
-        $data = [
-          'public_key' => $public_key,
-          'version' => 3,
-          'action' => 'pay',
-          'amount' => $amount,
-          'currency' => 'UAH',
-          'description' => __( 'Підтримати фонд', 'fundtce' ),
-          'order_id' => uniqid('fundtce_', true),
-        ];
+          $data = [
+            'public_key' => $public_key,
+            'version' => 3,
+            'action' => 'pay',
+            'amount' => $amount,
+            'currency' => 'UAH',
+            'description' => __( 'Підтримати фонд', 'fundtce' ),
+            'order_id' => uniqid('fundtce_', true),
+          ];
 
-        $data_json = json_encode( $data );
-        $data_base64_encode = base64_encode( $data_json );
-        $sign_string = $private_key . $data_base64_encode . $private_key;
-        $signature = base64_encode(sha1($sign_string, 1));
+          $data_json = json_encode( $data );
+          $data_base64_encode = base64_encode( $data_json );
+          $sign_string = $private_key . $data_base64_encode . $private_key;
+          $signature = base64_encode(sha1($sign_string, 1));
 
-        $form = '
-          <form class="visually-hidden" id="formLiqPay" method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8">
-            <input type="hidden" name="data" value="' . $data_base64_encode  . '"/>
-            <input type="hidden" name="signature" value="' . $signature . '"/>
-            <input type="image" src="//static.liqpay.ua/buttons/p1ru.radius.png"/>
-          </form>
-        ';
+          $form = '
+            <form class="visually-hidden" id="formLiqPay" method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8">
+              <input type="hidden" name="data" value="' . $data_base64_encode  . '"/>
+              <input type="hidden" name="signature" value="' . $signature . '"/>
+              <input type="image" src="//static.liqpay.ua/buttons/p1ru.radius.png"/>
+            </form>
+          ';
 
-        wp_send_json_success( [
-          'message' => 'Идет перенаправление на LiqPay',
-          'form' => $form,
-        ] );
+          wp_send_json_success( [
+            'message' => 'Идет перенаправление на LiqPay',
+            'form' => $form,
+          ] );
+        } else {
+          wp_send_json_error( [
+            'message' => 'Отсутствует публичный или приватный ключ LiqPay',
+          ] );
+        }
       } else {
         wp_send_json_error( [
-          'message' => 'Отсутствует публичный или приватный ключ LiqPay',
+          'message' => 'Кажется, Вы робот...',
         ] );
-      }
+      }      
     } else {
       wp_send_json_error( [
         'message' => 'Отсутствуют данные для запроса к LiqPay',

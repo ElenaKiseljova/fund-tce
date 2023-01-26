@@ -1,5 +1,31 @@
 'use strict';
 
+const checkRecaptcha = async (callback) => {
+  let noBot = 0;
+
+  const siteKey = wpcf7_recaptcha?.sitekey ?? false;
+
+  if (siteKey) {
+    await grecaptcha.ready(function () {
+      grecaptcha.execute(siteKey, { action: 'submit' }).then(function (token) {
+        console.log('grecaptcha is OK');
+
+        noBot = 1;
+
+        if (typeof callback === 'function') {
+          callback(noBot);
+        }
+      });
+    });
+  } else {
+    noBot = 1;
+
+    if (typeof callback === 'function') {
+      callback(noBot);
+    }
+  }
+};
+
 const sendForm = async (data) => {
   try {
     const url = fundtce_ajax.url;
@@ -40,16 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
       dataForm.append('action', 'fundtce_ajax_liqpay');
       dataForm.append('security', fundtce_ajax.nonce);
 
-      const formLiqPayHTML = await sendForm(dataForm);
+      // recaptcha
+      await checkRecaptcha(async (noBot) => {
+        dataForm.append('antibot', noBot);
 
-      form.insertAdjacentHTML('afterend', formLiqPayHTML || '');
+        const formLiqPayHTML = await sendForm(dataForm);
 
-      const formLiqPay = document.querySelector('#formLiqPay');
+        form.insertAdjacentHTML('afterend', formLiqPayHTML || '');
 
-      if (formLiqPay) {
-        formLiqPay.submit();
-      }
+        const formLiqPay = document.querySelector('#formLiqPay');
+
+        if (formLiqPay) {
+          formLiqPay.submit();
+        }
+      });
     });
   }
 });
+
+// document.addEventListener('wpcf7grecaptchaexecuted', () => {
+//   console.log('wpcf7grecaptchaexecuted', wpcf7_recaptcha);
+// });
 
