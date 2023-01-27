@@ -35,7 +35,7 @@
           foreach ($gal as $key => $item) {
           ?>
             <div class="swiper-slide gallery__slide">
-              <div class="gallery__photo js-paralax-item" style="--delay: <?= 4 + $key / 10; ?>s;"><img src="<?php echo $item['image'] ?>" alt="gallery photo" /></div>              
+              <div class="gallery__photo js-paralax-item" style="--delay: <?= 0.4 + $key / 10; ?>s;"><img src="<?php echo $item['image'] ?>" alt="gallery photo" /></div>              
             </div>
           <?php
           }

@@ -26,7 +26,7 @@
         <?php if ( $ptns && is_array($ptns) && !is_wp_error( $ptns ) ) : ?>
           <?php foreach ($ptns as $key => $item) : ?>
             <a 
-              class="partner__img js-paralax-item"  style="--delay: <?= 4 + $key / 10; ?>s;"
+              class="partner__img js-paralax-item"  style="--delay: <?= 0.4 + $key / 10; ?>s;"
               href="<?= $item['link'] ?? '#'; ?>"
               target="_blank"
             >

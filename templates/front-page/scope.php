@@ -20,7 +20,7 @@
               <?php              
               $i = 0;
               foreach ($items as $key => $item) : ?>
-                  <li class="scope__item js-paralax-item <?= $i === 0 ? 'active' : ''; ?>" style="--delay: <?= 4 + $key / 10; ?>s;">          
+                  <li class="scope__item js-paralax-item <?= $i === 0 ? 'active' : ''; ?>" style="--delay: <?= 0.4 + $key / 10; ?>s;">          
                       <div class="scope__head">
                           <p class="text-1 scope__name"><?php echo $item['scope_name']?></p>
                           <svg width="20" height="21">
