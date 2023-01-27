@@ -16,7 +16,7 @@
             <div class="help__img js-paralax-inner" style="--delay: 0.4s">
                 <img src="<?php the_field('help_img'); ?>" alt="Ukraine flag" />
             </div>
-            <div class="help__block">
+            <div class="help__block js-paralax-inner" style="--delay: 0.6s">
                 <div class="help__info">
                     <p class="text-2 help__text">
                         <?php the_field('help_text_1'); ?>
