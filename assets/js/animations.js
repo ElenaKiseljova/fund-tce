@@ -75,8 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .join('');
     });
   }
-
-  console.log(navigator?.userAgentData);
 });
 
 window.addEventListener('load', () => {
