@@ -25,7 +25,7 @@
             $m_position = $team_member['position'] ?? '';
           ?>
 
-          <li class="teal__item js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s">
+          <li class="teal__item js-paralax-item"  style="--delay: <?= 4 + $key / 10; ?>s;">
             <div class="team__img">
                 <img src="<?= $m_img; ?>" alt="partner logo"/>
             </div>

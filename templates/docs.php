@@ -30,7 +30,7 @@
               <?php 
                 $fancybox_src = $item['file'] ? $item['file'] :  $item['image'];
               ?>
-              <div class="swiper-slide docs__img js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s">
+              <div class="swiper-slide docs__img js-paralax-item"  style="--delay: <?= 4 + $key / 10; ?>s;">
                 <a data-fancybox data-src="<?= $fancybox_src; ?>" href="#">
                   <img src="<?= $item['image']; ?>" alt="document"/>
                 </a>

@@ -16,7 +16,7 @@
         $posts1 =  get_field('posts');
         foreach ($posts1 as $key => $post1) : ?>
 
-        <a href="<?php echo $post1['post_link']?>" class="card content__card js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s">
+        <a href="<?php echo $post1['post_link']?>" class="card content__card js-paralax-item"  style="--delay: <?= 0.4 + $key / 10; ?>s">
             <div class="card__img">
                 <img src="<?php echo $post1['image']?>" alt="content" />
             </div>

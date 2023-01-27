@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
       text.innerHTML = lines
         .map(
           (line, idx) =>
-            `<span class="js-transition-text-line" style="--delay: 0.${
-              4 + idx
+            `<span class="js-transition-text-line" style="--delay: ${
+              0.4 + idx / 10
             }s;">${line.join(' ')}</span>`
         )
         .join('');
