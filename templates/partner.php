@@ -24,11 +24,14 @@
         data-scroll-repeat="true"
       >
         <?php if ( $ptns && is_array($ptns) && !is_wp_error( $ptns ) ) : ?>
-          <?php          
-          foreach ($ptns as $key => $item) : ?>
-              <div class="partner__img js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s">
-                  <img src="<?php echo $item['image'] ?>" alt="partner logo"/>
-              </div>
+          <?php foreach ($ptns as $key => $item) : ?>
+            <a 
+              class="partner__img js-paralax-item"  style="--delay: 0.<?= 4 + $key; ?>s"
+              href="<?= $item['link'] ?? '#'; ?>"
+              target="_blank"
+            >
+                <img src="<?php echo $item['image'] ?>" alt="partner logo"/>
+            </a>
           <?php endforeach; ?>
         <?php endif; ?>  
       </div>
