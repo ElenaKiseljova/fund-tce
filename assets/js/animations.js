@@ -1,5 +1,61 @@
 'use strict';
 
+let scroll;
+
+// Удаление хеша при переходе на страницу с якорем
+const hash = window.location.hash;
+
+history.pushState(
+  '',
+  document.title,
+  window.location.pathname + window.location.search
+);
+
+// Плавный скролл к элементам при клике на якорные ссылки
+const scrollSmooth = (container = document, callback) => {
+  const hrefAttributes = container.querySelectorAll("a[href*='#']");
+
+  hrefAttributes.forEach((item) => {
+    const href = item.href.split('#');
+
+    const CURRENT_URL = window.location.origin + window.location.pathname;
+
+    if (href[0] === CURRENT_URL) {
+      item?.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        history.pushState(
+          '',
+          document.title,
+          window.location.pathname + `#${href[1]}` + window.location.search
+        );
+
+        try {
+          const scrollTarget = document.querySelector(`#${href[1]}`);
+          if (scrollTarget && scroll?.scrollTo) {
+            scroll.scrollTo(scrollTarget, {});
+          }
+        } catch (error) {}
+      });
+    }
+  });
+};
+
+scrollSmooth(document);
+
+window.addEventListener('popstate', (evt) => {
+  if (scroll) {
+    try {
+      const hash = evt.target.window.location.hash;
+      const hashEl = document.querySelector(hash);
+
+      if (hashEl) {
+        scroll.scrollTo(hashEl, {});
+      }
+    } catch (error) {}
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   // Заголовки
   const titles = document.querySelectorAll('.js-transition-title');
@@ -79,9 +135,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('load', () => {
   // Locomotive Scroll
-  const scroll = new LocomotiveScroll({
+  scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
+    reloadOnContextChange: true,
   });
+
+  if (scroll) {
+    // Переход к элементу при загрузке страницы
+    if (hash) {
+      history.pushState(
+        '',
+        document.title,
+        window.location.pathname + hash + window.location.search
+      );
+
+      try {
+        const hashEl = document.querySelector(hash);
+
+        if (hashEl) {
+          scroll.scrollTo(hashEl, {});
+        }
+      } catch (error) {}
+    }
+  }
 });
 
