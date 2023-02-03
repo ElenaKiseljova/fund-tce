@@ -179,17 +179,24 @@ function fundtce_draw_menu($name = '', $mode = 'desktop')
         $private_key = $liqpay['private_key'] ?? '';
 
         if ( !empty($public_key) && !empty($private_key)) {
-          $amount = $args['amount'] ?? 0;
+          $amount = $args['amount'] ?? 'another';
 
           $data = [
             'public_key' => $public_key,
             'version' => 3,
-            'action' => 'pay',
-            'amount' => $amount,
             'currency' => 'UAH',
             'description' => __( 'Підтримати фонд', 'fundtce' ),
             'order_id' => uniqid('fundtce_', true),
           ];
+
+          // Произвольная сумма пожертвований
+          if ($amount === 'another') {
+            $data['action'] = 'paydonate';
+          } else {
+            // Фиксированная сумма пожертвования в UAH
+            $data['action'] = 'pay';
+            $data['amount'] = (int) $amount;
+          }          
 
           $data_json = json_encode( $data );
           $data_base64_encode = base64_encode( $data_json );

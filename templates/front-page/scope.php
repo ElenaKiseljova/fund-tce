@@ -31,7 +31,7 @@
                           <div class="card__img">
                               <img src="<?php echo $item['card_img']?>" alt="scope image"/>
                           </div>
-                          <div class="card__text">
+                          <div class="scope__text card__text">
                               <h3><?php echo $item['scope_name']?></h3>
                               <p>
                                   <?php echo $item['card_text']?>
@@ -58,7 +58,7 @@
                   <div class="card__img">
                       <img src="<?php echo $item['card_img']?>" alt="scope image"/>
                   </div>
-                  <div class="card__text">
+                  <div class="scope__text card__text">
                       <h3><?php echo $item['scope_name']?></h3>
                       <p>
                           <?php echo $item['card_text']?>

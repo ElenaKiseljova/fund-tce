@@ -95,7 +95,8 @@ body {
   padding: 0 35px;
 }
 
-.title {
+.title,
+.page__content h2 {
   max-width: 100%;
 
   font-family: inherit;
@@ -111,7 +112,8 @@ body {
   --color-before: var(--black);
 }
 
-.title-2 {
+.title-2,
+.page__content h3 {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
@@ -122,24 +124,28 @@ body {
 
 .text,
 .text-1,
-.text-2 {
+.text-2,
+.page__content * {
   font-family: inherit;
   font-style: normal;
   font-weight: 500;
-  line-height: 130%;
   color: var(--black);
 }
 
-.text {
+.text,
+.page__content * {
   font-size: 16px;
+  line-height: 130%;
 }
 
 .text-1 {
   font-size: 20px;
+  line-height: 130%;
 }
 
 .text-2 {
   font-size: 14px;
+  line-height: 130%;
 }
 
 .text--grey {
@@ -488,9 +494,9 @@ input[type='radio']:checked + .btn {
   width: 110px;
 }
 
-/* .fund__sum:last-of-type {
+.fund__sum--another {
   font-size: 14px;
-} */
+}
 
 .fund__btn {
   width: 300px;
@@ -545,7 +551,7 @@ input[type='radio']:checked + .btn {
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
-  line-height: 111%;
+  line-height: 130%;
   color: var(--black);
   margin-bottom: 20px;
 }
@@ -555,7 +561,7 @@ input[type='radio']:checked + .btn {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 111%;
+  line-height: 130%;
   color: var(--grey);
 }
 
@@ -951,6 +957,7 @@ input[type='radio']:checked + .btn {
   width: 100%;
   height: 84px;
   padding: 0 30px;
+  border: 1px solid var(--light-grey);
   background-color: var(--light-grey);
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
@@ -974,6 +981,21 @@ input[type='radio']:checked + .btn {
 .scope__item {
   cursor: pointer;
 }
+
+.scope__item.active .scope__head {
+  border-color: var(--green);
+  background-color: var(--light-green);
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+/* .scope__item.active .scope__head p {
+  color: var(--white);
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+} */
 
 @media (any-hover: hover) {
   .scope__item:hover .scope__head {
@@ -999,28 +1021,9 @@ input[type='radio']:checked + .btn {
 }
 
 @media (any-hover: none) {
-  .scope__item.active .scope__head {
-    background-color: var(--green);
-    -webkit-transition: 0.3s ease;
-    -o-transition: 0.3s ease;
-    transition: 0.3s ease;
-  }
-
-  .scope__item.active .scope__head p {
-    color: var(--white);
-    -webkit-transition: 0.3s ease;
-    -o-transition: 0.3s ease;
-    transition: 0.3s ease;
-  }
-
   .scope__item.active svg {
-    fill: var(--white);
-    -webkit-transition: 0.3s ease;
-    -o-transition: 0.3s ease;
-    transition: 0.3s ease;
-  }
+    fill: var(--black);
 
-  .scope__item.active svg {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -1048,6 +1051,11 @@ input[type='radio']:checked + .btn {
 
 .scope__card--mobile {
   display: none;
+}
+
+.scope__text p {
+  font-size: 16px;
+  line-height: 130%;
 }
 
 .founder__wrapper {
@@ -2318,6 +2326,11 @@ input[type='radio']:checked + .btn {
   padding: 60px 0 180px;
 }
 
+.page__content ul,
+.page__content ol {
+  padding-left: 15px;
+}
+
 .page__content * + * {
   margin-top: 20px;
 }
@@ -2568,9 +2581,9 @@ input[type='radio']:checked + .btn {
     padding: 100px 0;
   }
 
-  .fund__sum {
+  /* .fund__sum {
     font-size: 14px;
-  }
+  } */
 
   .card--scope .card__img {
     height: 300px;
@@ -2587,6 +2600,11 @@ input[type='radio']:checked + .btn {
 
   .scope__name {
     font-size: 16px;
+  }
+
+  .scope__text p {
+    font-size: 14px;
+    line-height: 130%;
   }
 
   .founder__wrapper {
@@ -2719,7 +2737,8 @@ input[type='radio']:checked + .btn {
     padding: 0;
   }
 
-  .title {
+  .title,
+  .page__content h2 {
     font-size: 24px;
   }
 
@@ -2809,13 +2828,12 @@ input[type='radio']:checked + .btn {
   }
 
   .fund__sum {
-    font-size: 16px;
     width: 88px;
   }
 
-  /* .fund__sum:last-of-type {
+  .fund__sum--another {
     font-size: 12px;
-  } */
+  }
 
   .fund__btn {
     width: 100%;
@@ -3642,6 +3660,10 @@ input[type='radio']:checked + .btn {
 
   .fund__sum {
     width: 80px;
+  }
+
+  .fund__sum--another {
+    font-size: 10px;
   }
 
   .start__block {
