@@ -997,7 +997,7 @@ input[type='radio']:checked + .btn {
   transition: 0.3s ease;
 } */
 
-@media (any-hover: hover) {
+@media (any-hover: hover) and (pointer: fine) {
   .scope__item:hover .scope__head {
     background-color: var(--green);
     -webkit-transition: 0.3s ease;
